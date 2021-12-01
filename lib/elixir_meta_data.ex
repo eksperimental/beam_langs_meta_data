@@ -2,17 +2,18 @@ defmodule ElixirMetaData do
   @moduledoc """
   Documentation for `ElixirMetaData`.
   """
+  import ElixirMetaData.Util
 
-  @doc """
-  Hello world.
+  @type elixir_version_key :: String.t()
+  @type otp_version_key :: non_neg_integer
 
-  ## Examples
+  @releases priv_dir("releases.json") |> read_and_decode_json!()
 
-      iex> ElixirMetaData.hello()
-      :world
+  @spec releases() :: [%{String.t() => term}]
+  def releases(), do: @releases
 
-  """
-  def hello do
-    :world
-  end
+  @compatibility priv_dir("compatibility.json") |> read_and_decode_json!()
+
+  @spec compatibility() :: %{elixir_version_key => nonempty_list(otp_version_key)}
+  def compatibility(), do: @compatibility
 end
