@@ -10,6 +10,7 @@ defmodule ElixirMetaData do
   @releases priv_dir("releases.json") |> read_and_decode_json!()
 
   @spec releases() :: [%{String.t() => term}]
+  @doc url: "https://api.github.com/repositories/1234714/releases"
   def releases(), do: @releases
 
   @compatibility priv_dir("compatibility.json") |> read_and_decode_json!()
