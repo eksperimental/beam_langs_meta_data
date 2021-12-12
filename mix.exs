@@ -1,13 +1,37 @@
 defmodule ElixirMetaData.MixProject do
   use Mix.Project
 
+  @repo_url "https://github.com/eksperimental/elixir_meta_data"
+
   def project do
     [
       app: :elixir_meta_data,
       version: "0.1.0",
       elixir: "~> 1.3",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      description: """
+        Provides meta-data for Elixir and Erlang/OTP.
+
+        The information in this module is regularly updated, and stored with every new release of this library.
+        This library does not download information neither at compile time nor at real time.
+      """,
+      aliases: aliases(),
+      package: package(),
+      deps: deps(),
+
+      # Docs
+      name: "ElixirMetaData",
+      source_url: @repo_url,
+      homepage_url: @repo_url,
+      docs: [
+        # The main page in the docs
+        main: "ElixirMetaData",
+        # logo: "path/to/logo.png",
+        extras: [
+          "README.md": [filename: "readme", title: "Readme"],
+          "LICENSE.md": [filename: "license", title: "License"]
+        ]
+      ]
     ]
   end
 
@@ -18,11 +42,31 @@ defmodule ElixirMetaData.MixProject do
     ]
   end
 
+  defp aliases do
+    [
+      validate: ["format --check-formatted", "dialyzer", "docs", "credo"]
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Eksperimental"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => @repo_url},
+      files: ~w(
+          lib/
+          priv/
+          LICENSE.md
+          mix.exs
+          README.md
+          .formatter.exs
+        )
+    ]
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:jason, "~> 1.2"},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:credo, "~> 1.6", only: [:dev], runtime: false},
