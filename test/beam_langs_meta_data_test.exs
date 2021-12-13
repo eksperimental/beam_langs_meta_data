@@ -1,10 +1,10 @@
-defmodule ElixirMetaDataTest do
+defmodule BeamLangsMetaDataTest do
   use ExUnit.Case
-  doctest ElixirMetaData
+  doctest BeamLangsMetaData
 
   describe "elixir_releases/0" do
     test "does not include filtered keys" do
-      elixir_releases = ElixirMetaData.elixir_releases()
+      elixir_releases = BeamLangsMetaData.elixir_releases()
 
       filtered_keys = [
         "reactions",
@@ -22,7 +22,7 @@ defmodule ElixirMetaDataTest do
     end
 
     test "converted values" do
-      elixir_releases = ElixirMetaData.elixir_releases()
+      elixir_releases = BeamLangsMetaData.elixir_releases()
 
       for release_map <- elixir_releases do
         assert get_in(release_map, ["id"]) |> is_integer() == true
@@ -41,7 +41,7 @@ defmodule ElixirMetaDataTest do
   end
 
   describe "compatibility/0" do
-    compatibility = ElixirMetaData.compatibility()
+    compatibility = BeamLangsMetaData.compatibility()
 
     assert Enum.count(compatibility) >= 19
     assert Map.get(compatibility, "1.0") == [17]

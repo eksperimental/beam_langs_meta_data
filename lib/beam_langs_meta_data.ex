@@ -1,11 +1,11 @@
-defmodule ElixirMetaData do
+defmodule BeamLangsMetaData do
   @moduledoc """
   Provides meta-data for Elixir and Erlang/OTP.
 
   The information in this module is regularly updated, and stored with every new release of this library.
   This library does not download information neither at compile time nor at real time.
   """
-  import ElixirMetaData.Util
+  import BeamLangsMetaData.Util
 
   @external_resource "priv/releases.json"
   @external_resource "priv/compatibility.json"
@@ -40,7 +40,7 @@ defmodule ElixirMetaData do
 
   ## Examples
 
-      > ElixirMetaData.elixir_releases()
+      > BeamLangsMetaData.elixir_releases()
       [
         %{
           "assets" => [
@@ -106,7 +106,7 @@ defmodule ElixirMetaData do
 
   ## Examples
 
-      > ElixirMetaData.compatibility()
+      > BeamLangsMetaData.compatibility()
       %{
         "1.0" => [17],
         "1.0.5" => [17, 18],

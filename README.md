@@ -1,4 +1,4 @@
-# ElixirMetaData
+# BeamLangsMetaData
 
 Provides meta-data for Elixir and Erlang/OTP.
 
@@ -7,36 +7,36 @@ This library does not download information neither at compile time nor at real t
 
 This library is aimed at Elixir developers who need to access up-to-date information.
 If you are a developer and need more refined information, please have a look at its sister library
-[ElixirMeta](https://github.com/eksperimental/elixir_meta_data).
+[BeamLangsMetaData](https://github.com/eksperimental/beam_langs_meta_data).
 
 ## Repository and Packages
 
-This source code is freely available at <https://github.com/eksperimental/elixir_meta_data>
+This source code is freely available at <https://github.com/eksperimental/beam_langs_meta_data>
 
 Packages are regularly updated.
-All published packages can be found on Hex: <https://hex.pm/packages/elixir_meta_data>
+All published packages can be found on Hex: <https://hex.pm/packages/beam_langs_meta_data>
 
 
 ## Installation
 
-The package can be installed by adding `elixir_meta` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `beam_langs_meta_data` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:elixir_meta_data, "~> 0.1.0"},
+    {:beam_langs_meta_data, "~> 0.1.0"},
   ]
 end
 ```
 
 ## Documentation
 
-Online documentation can be found at <https://hexdocs.pm/elixir_meta_data>
+Online documentation can be found at <https://hexdocs.pm/beam_langs_meta_data>
 
 
 ## Feature Requests
 
-Feel free to open up an issue <https://github.com/eksperimental/elixir_meta_data/issues> with your request.
+Feel free to open up an issue <https://github.com/eksperimental/beam_langs_meta_data/issues> with your request.
 
 
 ## Future Plans
@@ -56,4 +56,4 @@ Eksperimental <eskperimental (at) autistici (dot) org>
 
 ## License
 
-ElixirMeta source code is licensed under the [MIT License](LICENSE.md).
+BeamLangsMetaData source code is licensed under the [MIT License](LICENSE.md).

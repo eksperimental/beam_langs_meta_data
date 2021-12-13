@@ -1,11 +1,11 @@
-defmodule ElixirMetaData.MixProject do
+defmodule BeamLangsMetaData.MixProject do
   use Mix.Project
 
-  @repo_url "https://github.com/eksperimental/elixir_meta_data"
+  @repo_url "https://github.com/eksperimental/beam_langs_meta_data"
 
   def project do
     [
-      app: :elixir_meta_data,
+      app: :beam_langs_meta_data,
       version: "0.1.0",
       elixir: "~> 1.3",
       start_permanent: Mix.env() == :prod,
@@ -20,12 +20,12 @@ defmodule ElixirMetaData.MixProject do
       deps: deps(),
 
       # Docs
-      name: "ElixirMetaData",
+      name: "BeamLangsMetaData",
       source_url: @repo_url,
       homepage_url: @repo_url,
       docs: [
         # The main page in the docs
-        main: "ElixirMetaData",
+        main: "BeamLangsMetaData",
         # logo: "path/to/logo.png",
         extras: [
           "README.md": [filename: "readme", title: "Readme"],
