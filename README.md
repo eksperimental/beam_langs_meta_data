@@ -46,6 +46,8 @@ Install the repository locally. You can run the validations by running:
 `mix validate` which is an alias for:
 
 - `mix format --check-formatted`
+- `mix deps.unlock --check-unused`
+- `mix compile --warnings-as-errors`
 - `mix dialyzer`
 - `mix docs`
 - `mix credo`

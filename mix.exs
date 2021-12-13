@@ -45,7 +45,15 @@ defmodule BeamLangsMetaData.MixProject do
 
   defp aliases do
     [
-      validate: ["format --check-formatted", "dialyzer", "docs", "credo"]
+      validate: [
+        "format --check-formatted",
+        "deps.unlock --check-unused",
+        "compile",
+        "compile --warnings-as-errors",
+        "dialyzer",
+        "docs",
+        "credo"
+      ]
     ]
   end
 
