@@ -25,6 +25,13 @@ defmodule BeamLangsMetaData do
   """
   @type otp_version_key :: non_neg_integer
 
+  @typedoc """
+  A pair between two projects, used in `compatibility/1`.
+
+  For example: `:elixir_otp` represents the compatibility between the Elixir and the OTP/Erlang versions.
+  """
+  @type compatibility_pair :: :elixir_otp
+
   @doc """
   Returns Elixir releases data.
 
@@ -121,7 +128,7 @@ defmodule BeamLangsMetaData do
       }
 
   """
-  @spec compatibility(:elixir_otp) :: %{
+  @spec compatibility(compatibility_pair) :: %{
           elixir_version_key => nonempty_list(otp_version_key)
         }
   @elixir_otp_compatibility priv_dir("elixir_otp_compatibility.json") |> read_and_decode_json!()
