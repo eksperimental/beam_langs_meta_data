@@ -31,7 +31,7 @@ defmodule BeamLangsMetaData.MixProject do
           "README.md": [filename: "readme", title: "Readme"],
           "LICENSE.md": [filename: "license", title: "License"]
         ],
-        source_ref: revision(),
+        source_ref: revision()
       ]
     ]
   end

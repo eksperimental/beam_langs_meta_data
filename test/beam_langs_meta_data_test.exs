@@ -40,16 +40,18 @@ defmodule BeamLangsMetaDataTest do
     end
   end
 
-  describe "compatibility/0" do
-    compatibility = BeamLangsMetaData.compatibility()
+  describe "compatibility/1" do
+    test ":elixir_otp" do
+      compatibility = BeamLangsMetaData.compatibility(:elixir_otp)
 
-    assert Enum.count(compatibility) >= 19
-    assert Map.get(compatibility, "1.0") == [17]
-    assert Map.get(compatibility, "1.10.3") == [21, 22, 23]
+      assert Enum.count(compatibility) >= 19
+      assert Map.get(compatibility, "1.0") == [17]
+      assert Map.get(compatibility, "1.10.3") == [21, 22, 23]
 
-    for {elixir_version, otp_versions} <- compatibility do
-      assert is_binary(elixir_version) == true
-      assert is_list(otp_versions) == true
+      for {elixir_version, otp_versions} <- compatibility do
+        assert is_binary(elixir_version) == true
+        assert is_list(otp_versions) == true
+      end
     end
   end
 end

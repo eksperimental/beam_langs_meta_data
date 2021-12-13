@@ -7,8 +7,8 @@ defmodule BeamLangsMetaData do
   """
   import BeamLangsMetaData.Util
 
-  @external_resource "priv/releases.json"
-  @external_resource "priv/compatibility.json"
+  @external_resource "priv/elixir_releases.json"
+  @external_resource "priv/elixir_otp_compatibility.json"
 
   @typedoc """
   It is a string that represents an Elixir version.
@@ -95,7 +95,7 @@ defmodule BeamLangsMetaData do
   The sources of this data can be found [here](https://api.github.com/repositories/1234714/releases?page=1).
   """
   @spec elixir_releases() :: nonempty_list(%{String.t() => term})
-  @elixir_releases priv_dir("releases.json") |> read_and_decode_json!()
+  @elixir_releases priv_dir("elixir_releases.json") |> read_and_decode_json!()
   def elixir_releases(), do: @elixir_releases
 
   @doc """
@@ -121,7 +121,9 @@ defmodule BeamLangsMetaData do
       }
 
   """
-  @spec compatibility() :: %{elixir_version_key => nonempty_list(otp_version_key)}
-  @compatibility priv_dir("compatibility.json") |> read_and_decode_json!()
-  def compatibility(), do: @compatibility
+  @spec compatibility(:elixir_otp) :: %{
+          elixir_version_key => nonempty_list(otp_version_key)
+        }
+  @elixir_otp_compatibility priv_dir("elixir_otp_compatibility.json") |> read_and_decode_json!()
+  def compatibility(:elixir_otp), do: @elixir_otp_compatibility
 end
