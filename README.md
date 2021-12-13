@@ -39,9 +39,23 @@ Online documentation can be found at <https://hexdocs.pm/beam_langs_meta_data>
 Feel free to open up an issue <https://github.com/eksperimental/beam_langs_meta_data/issues> with your request.
 
 
+## Development
+
+Install the repository locally. You can run the validations by running:
+
+`mix validate` which is an alias for:
+
+- `mix format --check-formatted`
+- `mix dialyzer`
+- `mix docs`
+- `mix credo`
+
+Run tests by executing:
+`mix test`
+
 ## Future Plans
 
-Soon, this information will automatically be updated and released as a new package version as soon as soon as a new
+Soon, this information will automatically be updated and released as a new package version as soon as a new
 Elixir version is released.
 
 I am planning to include the information for all Erlang/OTP releases.
