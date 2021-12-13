@@ -7,12 +7,12 @@ defmodule BeamLangsMetaDataTest do
       elixir_releases = BeamLangsMetaData.elixir_releases()
 
       filtered_keys = [
-        "reactions",
-        "download_count",
-        "updated_at",
-        "author",
-        "uploader",
-        "followers_url"
+        :reactions,
+        :download_count,
+        :updated_at,
+        :author,
+        :uploader,
+        :followers_ur
       ]
 
       for release_map <- elixir_releases do
@@ -25,16 +25,16 @@ defmodule BeamLangsMetaDataTest do
       elixir_releases = BeamLangsMetaData.elixir_releases()
 
       for release_map <- elixir_releases do
-        assert get_in(release_map, ["id"]) |> is_integer() == true
+        assert get_in(release_map, [:id]) |> is_integer() == true
 
-        assert get_in(release_map, ["assets", Access.all(), "id"]) |> Enum.all?(&is_integer/1) ==
+        assert get_in(release_map, [:assets, Access.all(), :id]) |> Enum.all?(&is_integer/1) ==
                  true
 
-        tag_name = get_in(release_map, ["tag_name"])
+        tag_name = get_in(release_map, [:tag_name])
         assert is_binary(tag_name) == true
         assert "v" <> _ = tag_name
 
-        draft = get_in(release_map, ["draft"])
+        draft = get_in(release_map, [:draft])
         assert draft in [true, false]
       end
     end

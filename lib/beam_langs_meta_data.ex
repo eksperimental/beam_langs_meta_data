@@ -11,7 +11,14 @@ defmodule BeamLangsMetaData do
   @external_resource "priv/elixir_otp_compatibility.json"
 
   @typedoc """
-  It is a string that represents an Elixir version.
+  A string that represents an Semver version.
+
+  For example: `"1.2.3-rc.4"`.
+  """
+  @type version_string :: String.t()
+
+  @typedoc """
+  A string that represents an Elixir version.
 
   It does not necessarily need to be a full version, it could be `"MAJOR.MINOR"` or
   `"MAJOR.MINOR.PATCH"`, for example: `"1.2"` or `"1.2.3"`.
@@ -19,11 +26,18 @@ defmodule BeamLangsMetaData do
   @type elixir_version_key :: String.t()
 
   @typedoc """
-  It is an integer that represents the Erlang/OTP major version.
+  An integer that represents the Erlang/OTP major version.
 
   For example: `24`.
   """
   @type otp_version_key :: non_neg_integer
+
+  @typedoc """
+  A Git tag or a branch name.
+
+  For example: `"v1.13"` or `"OTP-24.0-rc3"`.
+  """
+  @type git_tag :: String.t()
 
   @typedoc """
   A pair between two projects, used in `compatibility/1`.
@@ -31,6 +45,75 @@ defmodule BeamLangsMetaData do
   For example: `:elixir_otp` represents the compatibility between the Elixir and the OTP/Erlang versions.
   """
   @type compatibility_pair :: :elixir_otp
+
+  @typedoc """
+  A string that represents a URL.
+
+  For example: `"https://elixir-lang.org/"`.
+  """
+  @type url :: String.t()
+
+  @typedoc """
+  A string that represents an iso8601 timestamp.
+
+  For example: `"2021-11-22T09:04:55Z"`.
+  """
+  @type timestamp_string :: String.t()
+
+  @typedoc """
+  Elixir release data.
+
+  This data is extracted from Github JSON release file.
+  """
+  @type release_data :: %{
+          :assets => nonempty_list(release_data_asset()),
+          :assets_url => url(),
+          :body => String.t(),
+          :created_at => timestamp_string(),
+          :draft => boolean(),
+          :html_url => url(),
+          :id => pos_integer,
+          :name => url(),
+          :node_id => url(),
+          :prerelease => boolean(),
+          :published_at => timestamp_string(),
+          :tag_name => git_tag(),
+          :tarball_url => url(),
+          :target_commitish => git_tag,
+          :upload_url => url(),
+          :url => url(),
+          :zipball_url => url()
+        }
+
+  @type release_data_asset :: %{
+          :browser_download_url => url(),
+          :content_type => String.t(),
+          :created_at => timestamp_string(),
+          :id => pos_integer,
+          :label => nil | String.t(),
+          :name => String.t(),
+          :node_id => String.t(),
+          :size => non_neg_integer,
+          :state => String.t(),
+          :url => url()
+        }
+
+  @typedoc """
+  Erlang/OTP release data.
+  """
+  @type otp_release_data :: %{
+          required(:erlang_download_readme) => url(),
+          required(:name) => version_string(),
+          required(:readme) => url(),
+          required(:src) => url(),
+          required(:tag_name) => git_tag(),
+          optional(:html) => url(),
+          optional(:html_url) => url(),
+          optional(:man) => url(),
+          optional(:published_at) => timestamp_string(),
+          optional(:win32) => url(),
+          optional(:win64) => url()
+        }
 
   @doc """
   Returns Elixir releases data.
@@ -101,9 +184,26 @@ defmodule BeamLangsMetaData do
 
   The sources of this data can be found [here](https://api.github.com/repositories/1234714/releases?page=1).
   """
-  @spec elixir_releases() :: nonempty_list(%{String.t() => term})
-  @elixir_releases priv_dir("elixir_releases.json") |> read_and_decode_json!()
+  @spec elixir_releases() :: nonempty_list(release_data())
+  @elixir_releases priv_dir("elixir_releases.json") |> read_and_decode_json!() |> convert_keys()
   def elixir_releases(), do: @elixir_releases
+
+  @doc """
+  Returns Erlang/OTP releases data.
+
+  ## Examples
+
+      > BeamLangsMetaData.otp_releases()
+
+  """
+  @spec otp_releases() ::
+          nonempty_list(%{
+            required(:release) => String.t(),
+            required(:latest) => otp_release_data(),
+            optional(:patches) => [otp_release_data()]
+          })
+  @otp_releases priv_dir("otp_releases.json") |> read_and_decode_json!() |> convert_keys()
+  def otp_releases(), do: @otp_releases
 
   @doc """
   Returns a compatibilty table between Elixir and Erlang/OTP.
