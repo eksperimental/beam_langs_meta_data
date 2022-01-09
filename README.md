@@ -7,7 +7,7 @@ This library does not download information neither at compile time nor at real t
 
 This library is aimed at Elixir developers who need to access up-to-date information.
 If you are a developer and need more refined information, please have a look at its sister library
-[BeamLangsMetaData](https://github.com/eksperimental/beam_langs_meta_data).
+[ElixirMeta](https://github.com/eksperimental/elixir_meta).
 
 ## Repository and Packages
 
