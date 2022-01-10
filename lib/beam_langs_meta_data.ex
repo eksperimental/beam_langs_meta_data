@@ -9,6 +9,12 @@ defmodule BeamLangsMetaData do
 
   @external_resource "priv/elixir_releases.json"
   @external_resource "priv/elixir_otp_compatibility.json"
+  @external_resource "priv/otp_releases.json"
+
+  @typedoc """
+  A non-empty keyword list.
+  """
+  @type nonempty_keyword(key, value) :: nonempty_list({key, value})
 
   @typedoc """
   A string that represents an Semver version.
@@ -61,6 +67,13 @@ defmodule BeamLangsMetaData do
   @type timestamp_string :: String.t()
 
   @typedoc """
+  A file name
+
+  For example: `"Docs.zip"`.
+  """
+  @type file_name :: String.t()
+
+  @typedoc """
   Elixir release data.
 
   This data is extracted from Github JSON release file.
@@ -73,8 +86,8 @@ defmodule BeamLangsMetaData do
           :draft => boolean(),
           :html_url => url(),
           :id => pos_integer,
-          :name => url(),
-          :node_id => url(),
+          :name => file_name(),
+          :node_id => String.t(),
           :prerelease => boolean(),
           :published_at => timestamp_string(),
           :tag_name => git_tag(),
@@ -91,26 +104,27 @@ defmodule BeamLangsMetaData do
           :created_at => timestamp_string(),
           :id => pos_integer,
           :label => nil | String.t(),
-          :name => String.t(),
+          :name => file_name(),
           :node_id => String.t(),
           :size => non_neg_integer,
           :state => String.t(),
           :url => url()
         }
 
+  @type otp_version :: String.t()
+
   @typedoc """
   Erlang/OTP release data.
   """
   @type otp_release_data :: %{
-          required(:erlang_download_readme) => url(),
-          required(:name) => version_string(),
-          required(:readme) => url(),
-          required(:src) => url(),
+          required(:name) => otp_version(),
+          required(:readme_url) => url(),
+          required(:source_code) => url(),
           required(:tag_name) => git_tag(),
-          optional(:html) => url(),
-          optional(:html_url) => url(),
-          optional(:man) => url(),
-          optional(:published_at) => timestamp_string(),
+          optional(:doc_html) => url(),
+          optional(:doc_man) => url(),
+          optional(:published_at) => timestamp_string,
+          optional(:release_url) => url(),
           optional(:win32) => url(),
           optional(:win64) => url()
         }
@@ -197,12 +211,17 @@ defmodule BeamLangsMetaData do
 
   """
   @spec otp_releases() ::
-          nonempty_list(%{
-            required(:release) => String.t(),
-            required(:latest) => otp_release_data(),
-            optional(:patches) => [otp_release_data()]
-          })
-  @otp_releases priv_dir("otp_releases.json") |> read_and_decode_json!() |> convert_keys()
+          nonempty_keyword(
+            major_minor_version :: atom(),
+            %{
+              latest: otp_version(),
+              releases: nonempty_keyword(otp_version(), otp_release_data())
+            }
+          )
+  @otp_releases priv_dir("otp_releases.json")
+                |> read_and_decode_json!()
+                |> convert_keys()
+                |> format_otp_releases()
   def otp_releases(), do: @otp_releases
 
   @doc """

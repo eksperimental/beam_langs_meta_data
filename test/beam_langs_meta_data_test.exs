@@ -12,7 +12,7 @@ defmodule BeamLangsMetaDataTest do
         :updated_at,
         :author,
         :uploader,
-        :followers_ur
+        :followers_url
       ]
 
       for release_map <- elixir_releases do
