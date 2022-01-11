@@ -208,6 +208,54 @@ defmodule BeamLangsMetaData do
   ## Examples
 
       > BeamLangsMetaData.otp_releases()
+      [
+        "24.2": %{
+          latest: "24.2",
+          releases: [
+            "24.2": %{
+              doc_html: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_doc_html_24.2.tar.gz",
+              doc_man: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_doc_man_24.2.tar.gz",
+              name: "24.2",
+              published_at: "2021-12-15T14:31:36Z",
+              readme_url: "https://erlang.org/download/otp_src_24.2.readme",
+              release_url: "https://github.com/erlang/otp/releases/tag/OTP-24.2",
+              source_code: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_src_24.2.tar.gz",
+              tag_name: "OTP-24.2",
+              win32: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_win32_24.2.exe",
+              win64: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_win64_24.2.exe"
+            },
+            "24.1.7": %{
+              doc_html: "https://" <> ...,
+              doc_man: "https://" <> ...,
+              name: "24.1.7",
+              published_at: "2021-11-22T09:04:55Z",
+              readme_url: "https://" <> ...,
+              release_url: "https://" <> ...,
+              source_code: "https://" <> ...,
+              tag_name: "OTP-24.1.7",
+              win32: "https://" <> ...,
+              win64: "https://" <> ...
+            },
+            %{...},
+            "24.0": %{
+              doc_html: "https://" <> ...,
+              doc_man: "https://" <> ...,
+              name: "24.0",
+              ...
+            }
+          ]
+        },
+        "23.3": %{
+          latest: "23.3.4.10",
+          releases: [
+            "23.3.4.10": %{
+              doc_html: "https://" <> ...,
+              ...
+            },
+          ...],
+        },
+        ...
+      ]
 
   """
   @spec otp_releases() ::
