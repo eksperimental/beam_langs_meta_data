@@ -94,6 +94,7 @@ defmodule BeamLangsMetaData.Util do
     end
   end
 
+  # returns the MAJOR.MINOR string version of a version
   defp major_minor(string) when is_binary(string) do
     String.split(string, ".")
     |> Enum.take(2)
@@ -123,7 +124,6 @@ defmodule BeamLangsMetaData.Util do
         |> Map.drop([:erlang_download_readme, :readme])
         |> Map.put(:readme_url, readme_url)
         |> map_rename_key(:src, :source_code)
-        # |> update_if_exists(:published_at, &to_date_time/1)
         |> otp_releases_rename_keys()
 
       entry =
@@ -134,18 +134,6 @@ defmodule BeamLangsMetaData.Util do
       {String.to_atom(entry.name), entry}
     end
   end
-
-  # defp to_date_time(string) when is_binary(string) do
-  #   {:ok, date_time, _offset} = DateTime.from_iso8601(string)
-  #   date_time
-  # end
-
-  # defp update_if_exists(map, key, fun) when is_map(map) do
-  #   case map do
-  #     %{^key => value} -> %{map | key => fun.(value)}
-  #     %{} -> map
-  #   end
-  # end
 
   defp otp_releases_rename_keys(map) when is_map(map) do
     map
