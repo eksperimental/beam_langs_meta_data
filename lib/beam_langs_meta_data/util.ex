@@ -154,4 +154,41 @@ defmodule BeamLangsMetaData.Util do
 
   defp use_url(%{id: _id, url: url}), do: url
   defp use_url(term), do: term
+
+  # Compatiblity
+  def compatibility_otp_elixir(elixir_otp_compatibility) do
+    for {elixir_version, otp_versions} <- elixir_otp_compatibility,
+        otp_version <- otp_versions do
+      {otp_version, elixir_version}
+    end
+    # |> Enum.uniq()
+    |> Enum.sort()
+    |> Enum.group_by(fn {key, _value} -> key end, fn {_key, value} -> value end)
+    |> Enum.map(&filter_elixir_versions/1)
+    |> Map.new()
+  end
+
+  defp filter_elixir_versions({otp_version, elixir_versions}) do
+    new_elixir_versions =
+      Enum.reduce(elixir_versions, {[], MapSet.new()}, fn elixir_version, {acc, map_set} ->
+        minor_version = minor_version(elixir_version)
+
+        if MapSet.member?(map_set, minor_version) do
+          {acc, map_set}
+        else
+          {[elixir_version | acc], MapSet.put(map_set, minor_version)}
+        end
+      end)
+      |> elem(0)
+      |> :lists.reverse()
+
+    {otp_version, new_elixir_versions}
+  end
+
+  defp minor_version(elixir_version) when is_binary(elixir_version) do
+    elixir_version
+    |> String.split(".")
+    |> Enum.take(2)
+    |> Enum.join(".")
+  end
 end

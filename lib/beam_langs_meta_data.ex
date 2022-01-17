@@ -8,7 +8,7 @@ defmodule BeamLangsMetaData do
   import BeamLangsMetaData.Util
 
   @external_resource "priv/elixir_releases.json"
-  @external_resource "priv/elixir_otp_compatibility.json"
+  @external_resource "priv/compatibility_elixir_otp.json"
   @external_resource "priv/otp_releases.json"
 
   @typedoc """
@@ -48,9 +48,9 @@ defmodule BeamLangsMetaData do
   @typedoc """
   A pair between two projects, used in `compatibility/1`.
 
-  For example: `:elixir_otp` represents the compatibility between the Elixir and the OTP/Erlang versions.
+  For example: `{:elixir, :otp}` represents the compatibility between the Elixir and the OTP/Erlang versions.
   """
-  @type compatibility_pair :: :elixir_otp
+  @type compatibility_pair :: {:elixir, :otp} | {:otp, :elixir}
 
   @typedoc """
   A string that represents a URL.
@@ -273,14 +273,14 @@ defmodule BeamLangsMetaData do
   def otp_releases(), do: @otp_releases
 
   @doc """
-  Returns a compatibilty table between Elixir and Erlang/OTP.
+  Returns a compatibilty table between Elixir and Erlang/OTP, and viceversa.
 
   The information provided is based on the page
   [Compatibility between Elixir and Erlang/OTP](https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp).
 
   ## Examples
 
-      > BeamLangsMetaData.compatibility()
+      > BeamLangsMetaData.compatibility({:elixir, :otp})
       %{
         "1.0" => [17],
         "1.0.5" => [17, 18],
@@ -294,10 +294,27 @@ defmodule BeamLangsMetaData do
         ...
       }
 
+      > BeamLangsMetaData.compatibility({:elixir, :otp})
+      %{
+        17 => ["1.0", "1.1"],
+        18 => ["1.0.5", "1.1", "1.2", "1.3", "1.4", "1.5"],
+        19 => ["1.2.6", "1.3", "1.4", "1.5", "1.6", "1.7"],
+        20 => ["1.4.5", "1.5", "1.6", "1.7", "1.8", "1.9"],
+        21 => ["1.10", "1.11", "1.6", "1.7", "1.8", "1.9"],
+        22 => ["1.10", "1.11", "1.12", "1.13", "1.7", "1.8", "1.9"],
+        23 => ["1.10.3", "1.11", "1.12", "1.13"],
+        24 => ["1.11.4", "1.12", "1.13"]
+      }
   """
-  @spec compatibility(compatibility_pair) :: %{
+  @spec compatibility({:elixir, :otp}) :: %{
           elixir_version_key => nonempty_list(otp_version_key)
         }
-  @elixir_otp_compatibility priv_dir("elixir_otp_compatibility.json") |> read_and_decode_json!()
-  def compatibility(:elixir_otp), do: @elixir_otp_compatibility
+  @spec compatibility({:otp, :elixir}) :: %{
+          otp_version_key => nonempty_list(elixir_version_key)
+        }
+  @compatibility_elixir_otp priv_dir("compatibility_elixir_otp.json") |> read_and_decode_json!()
+  def compatibility({:elixir, :otp}), do: @compatibility_elixir_otp
+
+  @compatibility_otp_elixir compatibility_otp_elixir(@compatibility_elixir_otp)
+  def compatibility({:otp, :elixir}), do: @compatibility_otp_elixir
 end
