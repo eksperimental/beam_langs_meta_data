@@ -80,8 +80,8 @@ defmodule BeamLangsMetaData do
 
   This data is extracted from Github JSON release file.
   """
-  @type release_data :: %{
-          :assets => nonempty_list(release_data_asset()),
+  @type elixir_release_data :: %{
+          :assets => nonempty_list(elixir_release_data_asset()),
           :assets_url => url(),
           :body => String.t(),
           :created_at => timestamp_string(),
@@ -100,7 +100,7 @@ defmodule BeamLangsMetaData do
           :zipball_url => url()
         }
 
-  @type release_data_asset :: %{
+  @type elixir_release_data_asset :: %{
           :browser_download_url => url(),
           :content_type => String.t(),
           :created_at => timestamp_string(),
@@ -200,7 +200,7 @@ defmodule BeamLangsMetaData do
 
   The sources of this data can be found [here](https://api.github.com/repositories/1234714/releases?page=1).
   """
-  @spec elixir_releases() :: nonempty_list(release_data())
+  @spec elixir_releases() :: nonempty_list(elixir_release_data())
   @elixir_releases priv_dir("elixir_releases.json") |> read_and_decode_json!() |> convert_keys()
   def elixir_releases(), do: @elixir_releases
 
