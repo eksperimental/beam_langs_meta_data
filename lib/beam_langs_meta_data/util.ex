@@ -142,14 +142,13 @@ defmodule BeamLangsMetaData.Util do
     |> map_rename_key(:html_url, :release_url)
   end
 
-  defp map_rename_key(map, key, new_key)
-       when is_map(map) and is_map_key(map, key) and not is_map_key(map, new_key) do
-    {value, updated_map} = Map.pop!(map, key)
-    Map.put(updated_map, new_key, value)
-  end
-
-  defp map_rename_key(map, _key, _new_key) do
-    map
+  defp map_rename_key(map, key, new_key) when is_map(map) do
+    if Map.has_key?(map, key) and not Map.has_key?(map, new_key) do
+      {value, updated_map} = Map.pop(map, key)
+      Map.put(updated_map, new_key, value)
+    else
+      map
+    end
   end
 
   defp use_url(%{id: _id, url: url}), do: url
