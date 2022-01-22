@@ -26,7 +26,7 @@ defmodule BeamLangsMetaData.MixProject do
       # Docs
       name: @name,
       source_url: @repo_url,
-      homepage_url: @repo_url,
+      # homepage_url: @repo_url,
       docs: docs()
     ]
   end
