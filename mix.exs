@@ -4,11 +4,12 @@ defmodule BeamLangsMetaData.MixProject do
   @app :beam_langs_meta_data
   @name "BeamLangsMetaData"
   @repo_url "https://github.com/eksperimental/beam_langs_meta_data"
-  @description """
-    Provides meta-data for Elixir and Erlang/OTP.
 
-    The information in this module is regularly updated, and stored with every new release of this library.
-    This library does not download information neither at compile time nor at real time.
+  @description """
+  Provides meta-data for Elixir and Erlang/OTP.
+
+  The information in this module is regularly updated, and stored with every new release of this library.
+  This library does not download information neither at compile time nor at real time.
   """
 
   def project do
@@ -84,14 +85,16 @@ defmodule BeamLangsMetaData.MixProject do
       maintainers: ["Eksperimental"],
       licenses: ["CC0-1.0", "MIT-0", "0BSD"],
       links: %{"GitHub" => @repo_url},
-      files: ~w(
-          lib/
-          LICENSES/
-          priv/
-          .formatter.exs
-          mix.exs
-          README.md
-        )
+      source_url: @repo_url
+      # homepage_url: @repo_url,
+      # files: ~w(
+      #     lib/
+      #     LICENSES/
+      #     priv/
+      #     .formatter.exs
+      #     mix.exs
+      #     README.md
+      #   )
     ]
   end
 
@@ -101,8 +104,8 @@ defmodule BeamLangsMetaData.MixProject do
       {:jason, "~> 1.2"},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:credo, "~> 1.6", only: [:dev], runtime: false},
-      # {:ex_doc, "~> 0.26", only: :dev, runtime: false}
-      {:ex_doc, git: "https://github.com/elixir-lang/ex_doc.git", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
+      # {:ex_doc, git: "https://github.com/elixir-lang/ex_doc.git", only: :dev, runtime: false}
     ]
   end
 
@@ -110,6 +113,7 @@ defmodule BeamLangsMetaData.MixProject do
     [
       # The main page in the docs
       main: @name,
+      authors: ["Eksperimental"],
       extras: [
         "README.md": [filename: "readme", title: "Readme"],
         # "NOTICE": [filename: "notice", title: "Notice"],
