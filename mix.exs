@@ -15,7 +15,7 @@ defmodule BeamLangsMetaData.MixProject do
   def project do
     [
       app: @app,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.3",
       start_permanent: Mix.env() == :prod,
       description: @description,
@@ -86,15 +86,6 @@ defmodule BeamLangsMetaData.MixProject do
       licenses: ["CC0-1.0", "MIT-0", "0BSD"],
       links: %{"GitHub" => @repo_url},
       source_url: @repo_url
-      # homepage_url: @repo_url,
-      # files: ~w(
-      #     lib/
-      #     LICENSES/
-      #     priv/
-      #     .formatter.exs
-      #     mix.exs
-      #     README.md
-      #   )
     ]
   end
 
