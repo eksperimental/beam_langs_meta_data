@@ -137,12 +137,12 @@ defmodule BeamLangsMetaData do
   The data is a stripped down version of the Elixir releases JSON files from GitHub,
   decoded into a list of maps.
 
-  The source JSON file can be found in <https://api.github.com/repositories/1234714/releases>
-
   NOTE: The information that gets updated in real time is removed such as number of downloads and reactions.
   Currently `"updated_at"` is also removed, but it will be included when a mechanism to check for
   udpated in any part of the JSON files is implemented. As of now, only the new entries are added to this
   functions, so if there is any correction in a previously entered entry it will not be updated.
+
+  The sources of this data can be found <https://api.github.com/repositories/1234714/releases?page=1>.
 
   ## Examples
 
@@ -198,7 +198,6 @@ defmodule BeamLangsMetaData do
         ...
       ]
 
-  The sources of this data can be found [here](https://api.github.com/repositories/1234714/releases?page=1).
   """
   @spec elixir_releases() :: nonempty_list(elixir_release_data())
   @elixir_releases priv_dir("elixir_releases.json") |> read_and_decode_json!() |> convert_keys()
