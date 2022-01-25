@@ -1,34 +1,50 @@
 [
   {
     "latest": {
-      "erlang_download_readme": "https://erlang.org/download/otp_src_24.2.readme",
+      "erlang_download_readme": "https://erlang.org/download/OTP-24.2.1.README",
       "html": {
-        "id": 51838302,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_doc_html_24.2.tar.gz"
+        "id": 54929200,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_doc_html_24.2.1.tar.gz"
       },
-      "html_url": "https://github.com/erlang/otp/releases/tag/OTP-24.2",
+      "html_url": "https://github.com/erlang/otp/releases/tag/OTP-24.2.1",
       "man": {
-        "id": 51838303,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_doc_man_24.2.tar.gz"
+        "id": 54929201,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_doc_man_24.2.1.tar.gz"
       },
-      "name": "24.2",
-      "published_at": "2021-12-15T14:31:36Z",
-      "readme": "https://erlang.org/download/otp_src_24.2.readme",
+      "name": "24.2.1",
+      "published_at": "2022-01-25T17:12:12Z",
+      "readme": "https://erlang.org/download/OTP-24.2.1.README",
       "src": {
-        "id": 51838300,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_src_24.2.tar.gz"
+        "id": 54929202,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_src_24.2.1.tar.gz"
       },
-      "tag_name": "OTP-24.2",
-      "win32": {
-        "id": 51839901,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_win32_24.2.exe"
-      },
-      "win64": {
-        "id": 51839908,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_win64_24.2.exe"
-      }
+      "tag_name": "OTP-24.2.1",
+      "win32": "https://erlang.org/download/otp_win32_24.2.1.exe",
+      "win64": "https://erlang.org/download/otp_win64_24.2.1.exe"
     },
     "patches": [
+      {
+        "erlang_download_readme": "https://erlang.org/download/OTP-24.2.1.README",
+        "html": {
+          "id": 54929200,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_doc_html_24.2.1.tar.gz"
+        },
+        "html_url": "https://github.com/erlang/otp/releases/tag/OTP-24.2.1",
+        "man": {
+          "id": 54929201,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_doc_man_24.2.1.tar.gz"
+        },
+        "name": "24.2.1",
+        "published_at": "2022-01-25T17:12:12Z",
+        "readme": "https://erlang.org/download/OTP-24.2.1.README",
+        "src": {
+          "id": 54929202,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_src_24.2.1.tar.gz"
+        },
+        "tag_name": "OTP-24.2.1",
+        "win32": "https://erlang.org/download/otp_win32_24.2.1.exe",
+        "win64": "https://erlang.org/download/otp_win64_24.2.1.exe"
+      },
       {
         "erlang_download_readme": "https://erlang.org/download/otp_src_24.2.readme",
         "html": {
