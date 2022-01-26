@@ -19,8 +19,14 @@
         "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_src_24.2.1.tar.gz"
       },
       "tag_name": "OTP-24.2.1",
-      "win32": "https://erlang.org/download/otp_win32_24.2.1.exe",
-      "win64": "https://erlang.org/download/otp_win64_24.2.1.exe"
+      "win32": {
+        "id": 54932627,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_win32_24.2.1.exe"
+      },
+      "win64": {
+        "id": 54932633,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_win64_24.2.1.exe"
+      }
     },
     "patches": [
       {
@@ -42,8 +48,14 @@
           "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_src_24.2.1.tar.gz"
         },
         "tag_name": "OTP-24.2.1",
-        "win32": "https://erlang.org/download/otp_win32_24.2.1.exe",
-        "win64": "https://erlang.org/download/otp_win64_24.2.1.exe"
+        "win32": {
+          "id": 54932627,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_win32_24.2.1.exe"
+        },
+        "win64": {
+          "id": 54932633,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_win64_24.2.1.exe"
+        }
       },
       {
         "erlang_download_readme": "https://erlang.org/download/otp_src_24.2.readme",
@@ -498,34 +510,62 @@
   },
   {
     "latest": {
-      "erlang_download_readme": "https://erlang.org/download/OTP-23.3.4.10.README",
+      "erlang_download_readme": "https://erlang.org/download/OTP-23.3.4.11.README",
       "html": {
-        "id": 52303799,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.10/otp_doc_html_23.3.4.10.tar.gz"
+        "id": 54992910,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_doc_html_23.3.4.11.tar.gz"
       },
-      "html_url": "https://github.com/erlang/otp/releases/tag/OTP-23.3.4.10",
+      "html_url": "https://github.com/erlang/otp/releases/tag/OTP-23.3.4.11",
       "man": {
-        "id": 52303802,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.10/otp_doc_man_23.3.4.10.tar.gz"
+        "id": 54992914,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_doc_man_23.3.4.11.tar.gz"
       },
-      "name": "23.3.4.10",
-      "published_at": "2021-12-21T19:57:23Z",
-      "readme": "https://erlang.org/download/OTP-23.3.4.10.README",
+      "name": "23.3.4.11",
+      "published_at": "2022-01-26T09:52:57Z",
+      "readme": "https://erlang.org/download/OTP-23.3.4.11.README",
       "src": {
-        "id": 52303803,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.10/otp_src_23.3.4.10.tar.gz"
+        "id": 54992911,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_src_23.3.4.11.tar.gz"
       },
-      "tag_name": "OTP-23.3.4.10",
+      "tag_name": "OTP-23.3.4.11",
       "win32": {
-        "id": 52304626,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.10/otp_win32_23.3.4.10.exe"
+        "id": 54994352,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_win32_23.3.4.11.exe"
       },
       "win64": {
-        "id": 52304627,
-        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.10/otp_win64_23.3.4.10.exe"
+        "id": 54994364,
+        "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_win64_23.3.4.11.exe"
       }
     },
     "patches": [
+      {
+        "erlang_download_readme": "https://erlang.org/download/OTP-23.3.4.11.README",
+        "html": {
+          "id": 54992910,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_doc_html_23.3.4.11.tar.gz"
+        },
+        "html_url": "https://github.com/erlang/otp/releases/tag/OTP-23.3.4.11",
+        "man": {
+          "id": 54992914,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_doc_man_23.3.4.11.tar.gz"
+        },
+        "name": "23.3.4.11",
+        "published_at": "2022-01-26T09:52:57Z",
+        "readme": "https://erlang.org/download/OTP-23.3.4.11.README",
+        "src": {
+          "id": 54992911,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_src_23.3.4.11.tar.gz"
+        },
+        "tag_name": "OTP-23.3.4.11",
+        "win32": {
+          "id": 54994352,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_win32_23.3.4.11.exe"
+        },
+        "win64": {
+          "id": 54994364,
+          "url": "https://github.com/erlang/otp/releases/download/OTP-23.3.4.11/otp_win64_23.3.4.11.exe"
+        }
+      },
       {
         "erlang_download_readme": "https://erlang.org/download/OTP-23.3.4.10.README",
         "html": {
