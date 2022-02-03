@@ -33,6 +33,8 @@ defmodule BeamLangsMetaData do
   """
   @type elixir_version_key :: String.t()
 
+  @type otp_version :: String.t()
+
   @typedoc """
   An integer that represents the Erlang/OTP major version.
 
@@ -81,12 +83,12 @@ defmodule BeamLangsMetaData do
   This data is extracted from Github JSON release file.
   """
   @type elixir_release_data :: %{
-          :assets => nonempty_list(elixir_release_data_asset()),
+          :assets => nonempty_list(release_data_asset()),
           :assets_url => url(),
           :body => String.t(),
           :created_at => timestamp_string(),
           :draft => boolean(),
-          :html_url => url(),
+          :release_url => url(),
           :id => pos_integer,
           :name => file_name(),
           :node_id => String.t(),
@@ -94,13 +96,13 @@ defmodule BeamLangsMetaData do
           :published_at => timestamp_string(),
           :tag_name => git_tag(),
           :tarball_url => url(),
-          :target_commitish => git_tag,
+          :target_commitish => git_tag(),
           :upload_url => url(),
           :url => url(),
           :zipball_url => url()
         }
 
-  @type elixir_release_data_asset :: %{
+  @type release_data_asset :: %{
           :browser_download_url => url(),
           :content_type => String.t(),
           :created_at => timestamp_string(),
@@ -113,23 +115,38 @@ defmodule BeamLangsMetaData do
           :url => url()
         }
 
-  @type otp_version :: String.t()
-
   @typedoc """
   Erlang/OTP release data.
   """
-  @type otp_release_data :: %{
-          required(:name) => otp_version(),
-          required(:readme_url) => url(),
-          required(:source_code) => url(),
-          required(:tag_name) => git_tag(),
-          optional(:doc_html) => url(),
-          optional(:doc_man) => url(),
-          optional(:published_at) => timestamp_string,
-          optional(:release_url) => url(),
-          optional(:win32) => url(),
-          optional(:win64) => url()
-        }
+  @type otp_release_data ::
+          %{
+            :created_at => timestamp_string(),
+            :name => otp_version(),
+            :tag_name => git_tag(),
+            :tarball_url => url()
+          }
+          | %{
+              :assets => [release_data_asset()],
+              :assets_url => url(),
+              :body => String.t(),
+              :created_at => timestamp_string(),
+              :draft => boolean(),
+              :id => pos_integer,
+              :name => otp_version(),
+              :node_id => String.t(),
+              :prerelease => boolean(),
+              :published_at => timestamp_string(),
+              :release_url => url(),
+              :tag_name => git_tag(),
+              :tarball_url => url(),
+              :target_commitish => git_tag(),
+              :upload_url => url(),
+              :url => url(),
+              :zipball_url => url(),
+              optional(:download_urls) => %{otp_download_key => url()}
+            }
+
+  @type otp_download_key :: :doc_html | :doc_man | :readme | :source | :win32 | :win64
 
   @doc """
   Returns Elixir releases data.
@@ -180,7 +197,7 @@ defmodule BeamLangsMetaData do
           "body" => "Announcement: " <> ...,
           "created_at" => "2021-12-03T18:03:54Z",
           "draft" => false,
-          "html_url" => "https://github.com/elixir-lang/elixir/releases/tag/v1.13.0",
+          "release_url" => "https://github.com/elixir-lang/elixir/releases/tag/v1.13.0",
           "id" => 54599470,
           "name" => "",
           "node_id" => "RE_kwDOABLXGs4DQR8u",
@@ -199,8 +216,19 @@ defmodule BeamLangsMetaData do
       ]
 
   """
-  @spec elixir_releases() :: nonempty_list(elixir_release_data())
-  @elixir_releases priv_dir("elixir_releases.json") |> read_and_decode_json!() |> convert_keys()
+  # @spec elixir_releases() :: nonempty_list(elixir_release_data())
+  @spec elixir_releases() ::
+          nonempty_keyword(
+            major_minor_version :: atom(),
+            %{
+              latest: version_string(),
+              releases: nonempty_keyword(elixir_version :: atom(), elixir_release_data())
+            }
+          )
+
+  @elixir_releases priv_dir("elixir_releases.json")
+                   |> read_and_decode_json!()
+                   |> format_releases(:elixir)
   def elixir_releases(), do: @elixir_releases
 
   @doc """
@@ -211,66 +239,103 @@ defmodule BeamLangsMetaData do
       > BeamLangsMetaData.otp_releases()
       [
         "24.2": %{
-          latest: "24.2",
+          latest: "24.2.1",
           releases: [
+            "24.2.1": %{
+              assets: [
+                %{
+                  browser_download_url: "https://github.com/erlang/otp/releases/download/OTP-24.2.1/SHA256.txt",
+                  content_type: "text/plain",
+                  created_at: "2022-01-25T17:22:17Z",
+                  id: 54929204,
+                  label: "",
+                  name: "SHA256.txt",
+                  node_id: "RA_kwDOAAW4j84DRic0",
+                  size: 347,
+                  state: "uploaded",
+                  url: "https://api.github.com/repos/erlang/otp/releases/assets/54929204"
+                },
+                %{
+                  browser_download_url: ...,
+                  content_type: ...,
+                  created_at: ...,
+                  id: ...,
+                  label: "",
+                  name: ...,
+                  node_id: ...,
+                  size: ...,
+                  state: ...,
+                  url: ...
+                },
+                ...
+              ],
+              assets_url: "https://api.github.com/repos/erlang/otp/releases/57941240/assets",
+              body: "```\nPatch Package:           OTP 24.2.1\nGit Tag:" <>...",
+              created_at: "2022-01-22T08:41:48Z",
+              draft: false,
+              release_url: "https://github.com/erlang/otp/releases/tag/OTP-24.2.1",
+              id: 57941240,
+              name: "24.2.1",
+              node_id: "RE_kwDOAAW4j84DdBz4",
+              prerelease: false,
+              published_at: "2022-01-25T17:12:12Z",
+              tag_name: "OTP-24.2.1",
+              tarball_url: "https://api.github.com/repos/erlang/otp/tarball/OTP-24.2.1",
+              target_commitish: "master",
+              upload_url: "https://uploads.github.com/repos/erlang/otp/releases/57941240/assets{?name,label}",
+              url: "https://api.github.com/repos/erlang/otp/releases/57941240",
+              zipball_url: "https://api.github.com/repos/erlang/otp/zipball/OTP-24.2.1"
+            },
             "24.2": %{
-              doc_html: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_doc_html_24.2.tar.gz",
-              doc_man: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_doc_man_24.2.tar.gz",
-              name: "24.2",
-              published_at: "2021-12-15T14:31:36Z",
-              readme_url: "https://erlang.org/download/otp_src_24.2.readme",
+              assets: [
+                %{
+                  browser_download_url: ...,
+                  content_type: ...,
+                  created_at: ...,
+                  id: ...,
+                  label: "",
+                  name: ...,
+                  node_id: ...,
+                  size: ...,
+                  state: ...,
+                  url: ...,
+                },
+                ...
+              ],
+              assets_url: "https://api.github.com/repos/erlang/otp/releases/55351570/assets",
+              body: "Erlang/OTP 24.2 is the second maintenance patch release for OTP 24" <> ...,
+              created_at: "2021-12-14T18:04:03Z",
+              draft: false,
               release_url: "https://github.com/erlang/otp/releases/tag/OTP-24.2",
-              source_code: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_src_24.2.tar.gz",
+              id: 55351570,
+              name: "24.2",
+              node_id: "RE_kwDOAAW4j84DTJkS",
+              prerelease: false,
+              published_at: "2021-12-15T14:31:36Z",
               tag_name: "OTP-24.2",
-              win32: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_win32_24.2.exe",
-              win64: "https://github.com/erlang/otp/releases/download/OTP-24.2/otp_win64_24.2.exe"
+              tarball_url: "https://api.github.com/repos/erlang/otp/tarball/OTP-24.2",
+              target_commitish: "master",
+              upload_url: "https://uploads.github.com/repos/erlang/otp/releases/55351570/assets{?name,label}",
+              url: "https://api.github.com/repos/erlang/otp/releases/55351570",
+              zipball_url: "https://api.github.com/repos/erlang/otp/zipball/OTP-24.2"
             },
-            "24.1.7": %{
-              doc_html: "https://" <> ...,
-              doc_man: "https://" <> ...,
-              name: "24.1.7",
-              published_at: "2021-11-22T09:04:55Z",
-              readme_url: "https://" <> ...,
-              release_url: "https://" <> ...,
-              source_code: "https://" <> ...,
-              tag_name: "OTP-24.1.7",
-              win32: "https://" <> ...,
-              win64: "https://" <> ...
-            },
-            %{...},
-            "24.0": %{
-              doc_html: "https://" <> ...,
-              doc_man: "https://" <> ...,
-              name: "24.0",
-              ...
-            }
+            ...
           ]
-        },
-        "23.3": %{
-          latest: "23.3.4.10",
-          releases: [
-            "23.3.4.10": %{
-              doc_html: "https://" <> ...,
-              ...
-            },
-          ...],
-        },
-        ...
+        }
       ]
 
   """
   @spec otp_releases() ::
           nonempty_keyword(
-            major_minor_version :: atom(),
+            major_version :: atom(),
             %{
               latest: otp_version(),
-              releases: nonempty_keyword(otp_version(), otp_release_data())
+              releases: nonempty_keyword(otp_version :: atom(), otp_release_data())
             }
           )
   @otp_releases priv_dir("otp_releases.json")
                 |> read_and_decode_json!()
-                |> convert_keys()
-                |> format_otp_releases()
+                |> format_releases(:otp)
   def otp_releases(), do: @otp_releases
 
   @doc """

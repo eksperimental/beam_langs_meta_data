@@ -1,6 +1,8 @@
 defmodule BeamLangsMetaData.Util do
   @moduledoc false
 
+  import BeamLangsMetaData.Helper
+
   def priv_dir(), do: :code.priv_dir(:beam_langs_meta_data)
 
   def priv_dir(file_path) when is_binary(file_path), do: Path.join(priv_dir(), file_path)
@@ -11,134 +13,157 @@ defmodule BeamLangsMetaData.Util do
     |> Jason.decode!()
   end
 
-  elixir_accepted_keys = ~W(
+  @accepted_keys ~W(
     assets
     assets_url
     body
-    browser_download_url
-    content_type
     created_at
     draft
-    html_url
     id
-    label
     name
     node_id
     prerelease
     published_at
-    size
-    state
+    release_url
     tag_name
     tarball_url
     target_commitish
     upload_url
     url
     zipball_url
-  )
+  )a
 
-  otp_accepted_keys = ~W(
-    erlang_download_readme
-    html
-    html_url
-    latest
-    patches
-    man
+  @assets_accepted_keys ~W(
+    browser_download_url
+    content_type
+    created_at
+    id
+    label
     name
-    patch
-    published_at
-    readme
-    release
-    src
-    tag_name
-    win32
-    win64
-  )
+    node_id
+    size
+    state
+    url
+  )a
 
-  @accepted_keys elixir_accepted_keys ++ otp_accepted_keys
+  def format_releases(list, :otp) do
+    list = convert_keys_to_atoms(list)
 
-  def convert_keys(term) when is_map(term),
-    do: convert_keys(term, :map)
-
-  def convert_keys(term) when is_list(term),
-    do: convert_keys(term, :list)
-
-  def convert_keys(term),
-    do: term
-
-  defp convert_keys(term, type) do
-    for element <- term, into: into(type) do
-      case element do
-        {k, v} when k in @accepted_keys ->
-          {String.to_atom(k), convert_keys(v)}
-
-        {k, v} ->
-          {k, convert_keys(v)}
-
-        _ ->
-          convert_keys(element)
-      end
-    end
-  end
-
-  defp into(:map), do: %{}
-  defp into(:list), do: []
-
-  def format_otp_releases(list) do
     for entry <- list do
+      latest_name = entry[:latest][:name]
+
       new_entry = %{
-        latest: entry.latest.name,
-        releases: format_otp_releases_patches(entry.patches)
+        latest: filter_keys(latest_name, :otp),
+        releases: entry[:patches] |> format_release_patches(:otp) |> sort_by_version_key(:desc)
       }
 
-      {major_minor(entry.latest.name), new_entry}
+      latest_version = to_version!(latest_name)
+
+      {:"#{latest_version.major}", new_entry}
     end
+    |> sort_releases(:desc)
   end
 
-  # returns the MAJOR.MINOR string version of a version
-  defp major_minor(string) when is_binary(string) do
-    String.split(string, ".")
-    |> Enum.take(2)
-    |> Enum.join(".")
-    |> String.to_atom()
+  def format_releases(list, :elixir) do
+    list = convert_keys_to_atoms(list)
+
+    grouped =
+      Enum.group_by(list, fn x -> major_minor(String.trim_leading(x[:tag_name], "v")) end, fn x ->
+        {String.to_atom(String.trim_leading(x[:tag_name], "v")), x}
+      end)
+
+    filtered =
+      Enum.reject(grouped, fn {k, _v} ->
+        Version.match?(to_version!(to_string(k)), "< 1.0.0")
+      end)
+
+    for {major_minor, entries} <- filtered do
+      latest_name =
+        entries
+        |> Keyword.keys()
+        |> Enum.map(&to_string/1)
+        |> Enum.map(&Version.parse!/1)
+        |> Enum.max(Version)
+        |> to_string()
+
+      entries =
+        entries
+        |> Enum.map(fn {k, v} -> {:"#{k}", release_rename_keys(v, :elixir)} end)
+
+      new_entry = %{
+        latest: latest_name,
+        releases: sort_by_version_key(entries, :desc)
+      }
+
+      {major_minor, new_entry}
+    end
+    |> sort_releases(:desc)
   end
 
-  defp nilify(""), do: nil
-  defp nilify(term), do: term
+  defp sort_releases(releases, order) do
+    Enum.sort_by(
+      releases,
+      fn {k, _v} ->
+        k |> to_string() |> to_version!()
+      end,
+      {order, Version}
+    )
+  end
 
-  defp format_otp_releases_patches(list) when is_list(list) do
+  def sort_by_version_key(keyword, order) when is_list(keyword) and order in [:asc, :desc] do
+    Enum.sort_by(
+      keyword,
+      fn
+        {version_string, _} when is_binary(version_string) ->
+          version_string |> to_version!()
+
+        {version_atom, _} when is_atom(version_atom) ->
+          version_atom |> to_string() |> to_version!()
+      end,
+      {order, Version}
+    )
+  end
+
+  defp format_release_patches(list, project) when is_list(list) do
     for entry <- list do
-      readme_url =
-        cond do
-          entry.readme == entry.erlang_download_readme ->
-            entry.readme
-
-          readme = nilify(entry.readme) || nilify(entry.erlang_download_readme) ->
-            readme
-
-          true ->
-            ""
-        end
-
-      entry =
-        entry
-        |> Map.drop([:erlang_download_readme, :readme])
-        |> Map.put(:readme_url, readme_url)
-        |> map_rename_key(:src, :source_code)
-        |> otp_releases_rename_keys()
+      entry = release_rename_keys(entry, project)
 
       entry =
         for {k, v} <- entry, into: %{} do
           {k, use_url(v)}
         end
+        |> filter_keys(:otp)
 
-      {String.to_atom(entry.name), entry}
+      {String.to_atom(entry[:name]), entry}
     end
   end
 
-  defp otp_releases_rename_keys(map) when is_map(map) do
+  # returns the MAJOR.MINOR atom version of a version
+  defp major_minor(string) when is_binary(string),
+    do: string |> String.to_atom() |> major_minor()
+
+  defp major_minor(atom) when is_atom(atom) do
+    atom
+    |> to_string()
+    |> String.split(".")
+    |> Enum.take(2)
+    |> Enum.join(".")
+    |> String.to_atom()
+  end
+
+  # defp nilify(""), do: nil
+  # defp nilify(term), do: term
+
+  defp release_rename_keys(map, :elixir) when is_map(map) do
     map
-    |> map_rename_key(:html, :doc_html)
-    |> map_rename_key(:man, :doc_man)
+    |> map_rename_key(:html_url, :release_url)
+  end
+
+  defp release_rename_keys(map, :otp) when is_map(map) do
+    map
+    # |> map_rename_key(:html, :doc_html)
+    # |> map_rename_key(:man, :doc_man)
+    |> map_rename_key(:readme, :readme_url)
     |> map_rename_key(:html_url, :release_url)
   end
 
@@ -190,4 +215,56 @@ defmodule BeamLangsMetaData.Util do
     |> Enum.take(2)
     |> Enum.join(".")
   end
+
+  defp convert_keys_to_atoms(term) when is_list(term) or is_map(term) do
+    Enum.reduce(term, into(term), fn
+      {k, v}, acc ->
+        into(acc, {:"#{k}", convert_keys_to_atoms(v)})
+
+      elem, acc ->
+        into(acc, convert_keys_to_atoms(elem))
+    end)
+  end
+
+  defp convert_keys_to_atoms(term) do
+    term
+  end
+
+  defp filter_keys(term, accepted_keys_atom) when is_atom(accepted_keys_atom) do
+    filter_keys(term, accepted_keys(accepted_keys_atom))
+  end
+
+  defp filter_keys(term, accepted_keys_list)
+       when (is_map(term) or is_list(term)) and is_list(accepted_keys_list) do
+    Enum.reduce(term, into(term), fn
+      {k, v}, acc ->
+        cond do
+          k == :assets ->
+            into(acc, {k, filter_keys(v, :assets)})
+
+          k in accepted_keys_list ->
+            into(acc, {k, filter_keys(v, accepted_keys_list)})
+
+          true ->
+            acc
+        end
+
+      elem, acc ->
+        into(acc, filter_keys(elem, accepted_keys_list))
+    end)
+  end
+
+  defp filter_keys(term, accepted_keys_list) when is_list(accepted_keys_list) do
+    term
+  end
+
+  # defp accepted_keys(:elixir), do: @accepted_keys
+  defp accepted_keys(:otp), do: @accepted_keys
+  defp accepted_keys(:assets), do: @assets_accepted_keys
+
+  defp into(term) when is_map(term), do: %{}
+  defp into(term) when is_list(term), do: []
+
+  defp into(acc, {k, v}) when is_map(acc), do: Map.put(acc, k, v)
+  defp into(acc, elem) when is_list(acc), do: [elem | acc]
 end

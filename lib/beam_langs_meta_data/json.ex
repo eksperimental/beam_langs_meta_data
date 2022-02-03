@@ -41,7 +41,7 @@ defmodule BeamLangsMetaData.Json do
   ## Examples
 
       > BeamLangsMetaData.Json.otp_releases()
-      "[\n  {\n    \"latest\": {\n      \"erlang_download_readme\": " <> ...
+      "[\n  {\n    \"latest\": {\n      \"readme\": " <> ...
 
   """
   @spec otp_releases() :: json()
