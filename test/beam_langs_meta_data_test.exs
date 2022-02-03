@@ -79,8 +79,9 @@ defmodule BeamLangsMetaDataTest do
                  true
 
         tag_name = get_in(release_map, [:tag_name])
+        name = get_in(release_map, [:name])
         assert is_binary(tag_name) == true
-        assert "v" <> _ = tag_name
+        assert "v" <> name == tag_name
 
         draft = get_in(release_map, [:draft])
         assert draft in [true, false]

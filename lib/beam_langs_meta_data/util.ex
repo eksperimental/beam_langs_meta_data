@@ -88,7 +88,16 @@ defmodule BeamLangsMetaData.Util do
 
       entries =
         entries
-        |> Enum.map(fn {k, v} -> {:"#{k}", release_rename_keys(v, :elixir)} end)
+        |> Enum.map(fn {k, v} ->
+          "v" <> name = v.tag_name
+
+          v =
+            v
+            |> release_rename_keys(:elixir)
+            |> Map.put(:name, name)
+
+          {:"#{k}", v}
+        end)
 
       new_entry = %{
         latest: latest_name,

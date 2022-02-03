@@ -90,7 +90,7 @@ defmodule BeamLangsMetaData do
           :draft => boolean(),
           :release_url => url(),
           :id => pos_integer,
-          :name => file_name(),
+          :name => version :: String.t(),
           :node_id => String.t(),
           :prerelease => boolean(),
           :published_at => timestamp_string(),
