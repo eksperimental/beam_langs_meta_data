@@ -16,7 +16,7 @@ defmodule BeamLangsMetaData.MixProject do
     [
       app: @app,
       version: "0.2.0",
-      elixir: "~> 1.3",
+      elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       description: @description,
       aliases: aliases(),
