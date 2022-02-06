@@ -98,6 +98,7 @@ defmodule BeamLangsMetaData.MixProject do
       {:jason, "~> 1.2"},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:credo, "~> 1.6", only: [:dev], runtime: false},
+      {:gradient, github: "esl/gradient", only: [:dev], runtime: false},
       {:ex_doc, "~> 0.27", only: :dev, runtime: false}
       # {:ex_doc, git: "https://github.com/elixir-lang/ex_doc.git", only: :dev, runtime: false}
     ]
