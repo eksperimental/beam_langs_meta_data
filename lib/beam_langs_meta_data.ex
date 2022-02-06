@@ -33,10 +33,15 @@ defmodule BeamLangsMetaData do
   """
   @type elixir_version_key :: String.t()
 
+  @typedoc """
+  A string representation of an Erlang/OTP version.
+
+  For example: `"23.1.4.1"`
+  """
   @type otp_version :: String.t()
 
   @typedoc """
-  An integer that represents the Erlang/OTP major version.
+  An integer that represents a major Erlang/OTP version.
 
   For example: `24`.
   """
@@ -80,7 +85,7 @@ defmodule BeamLangsMetaData do
   @typedoc """
   Elixir release data.
 
-  This data is extracted from Github JSON release file.
+  This data is extracted from Github JSON release file and is stripped down and slightly modified.
   """
   @type elixir_release_data :: %{
           :assets => nonempty_list(release_data_asset()),
@@ -90,7 +95,7 @@ defmodule BeamLangsMetaData do
           :draft => boolean(),
           :release_url => url(),
           :id => pos_integer,
-          :name => version :: String.t(),
+          :name => version_string(),
           :node_id => String.t(),
           :prerelease => boolean(),
           :published_at => timestamp_string(),
@@ -102,8 +107,13 @@ defmodule BeamLangsMetaData do
           :zipball_url => url()
         }
 
+  @typedoc """
+  Elixir release data asset.
+
+  This data is extracted from Github JSON release file and is stripped down and slightly modified.
+  """
   @type release_data_asset :: %{
-          :browser_download_url => url(),
+          :download_url => url(),
           :content_type => String.t(),
           :created_at => timestamp_string(),
           :id => pos_integer,
@@ -228,7 +238,7 @@ defmodule BeamLangsMetaData do
 
   @elixir_releases priv_dir("elixir_releases.json")
                    |> read_and_decode_json!()
-                   |> format_releases(:elixir)
+                   |> build_releases(:elixir)
   def elixir_releases(), do: @elixir_releases
 
   @doc """
@@ -335,7 +345,7 @@ defmodule BeamLangsMetaData do
           )
   @otp_releases priv_dir("otp_releases.json")
                 |> read_and_decode_json!()
-                |> format_releases(:otp)
+                |> build_releases(:otp)
   def otp_releases(), do: @otp_releases
 
   @doc """

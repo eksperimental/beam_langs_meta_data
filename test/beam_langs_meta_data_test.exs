@@ -55,7 +55,7 @@ defmodule BeamLangsMetaDataTest do
       ]a
 
       required_asset_keys = [
-        :browser_download_url,
+        :download_url,
         :content_type,
         :created_at,
         :id,
@@ -147,11 +147,12 @@ defmodule BeamLangsMetaDataTest do
       end
     end
 
+    # @tag :skip
     test "converted values", %{otp_releases: otp_releases} do
       required_keys = [:created_at, :name, :tag_name, :tarball_url]
 
       required_asset_keys = [
-        :browser_download_url,
+        :download_url,
         :content_type,
         :created_at,
         :id,

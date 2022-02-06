@@ -3,6 +3,8 @@ defmodule BeamLangsMetaData.Util do
 
   import BeamLangsMetaData.Helper
 
+  @otp_version_requirement ">= 17.0.0"
+
   def priv_dir(), do: :code.priv_dir(:beam_langs_meta_data)
 
   def priv_dir(file_path) when is_binary(file_path), do: Path.join(priv_dir(), file_path)
@@ -11,102 +13,6 @@ defmodule BeamLangsMetaData.Util do
     file_path
     |> File.read!()
     |> Jason.decode!()
-  end
-
-  @accepted_keys ~W(
-    assets
-    assets_url
-    body
-    created_at
-    draft
-    id
-    name
-    node_id
-    prerelease
-    published_at
-    release_url
-    tag_name
-    tarball_url
-    target_commitish
-    upload_url
-    url
-    zipball_url
-  )a
-
-  @assets_accepted_keys ~W(
-    browser_download_url
-    content_type
-    created_at
-    id
-    label
-    name
-    node_id
-    size
-    state
-    url
-  )a
-
-  def format_releases(list, :otp) do
-    list = convert_keys_to_atoms(list)
-
-    for entry <- list do
-      latest_name = entry[:latest][:name]
-
-      new_entry = %{
-        latest: filter_keys(latest_name, :otp),
-        releases: entry[:patches] |> format_release_patches(:otp) |> sort_by_version_key(:desc)
-      }
-
-      latest_version = to_version!(latest_name)
-
-      {:"#{latest_version.major}", new_entry}
-    end
-    |> sort_releases(:desc)
-  end
-
-  def format_releases(list, :elixir) do
-    list = convert_keys_to_atoms(list)
-
-    grouped =
-      Enum.group_by(list, fn x -> major_minor(String.trim_leading(x[:tag_name], "v")) end, fn x ->
-        {String.to_atom(String.trim_leading(x[:tag_name], "v")), x}
-      end)
-
-    filtered =
-      Enum.reject(grouped, fn {k, _v} ->
-        Version.match?(to_version!(to_string(k)), "< 1.0.0")
-      end)
-
-    for {major_minor, entries} <- filtered do
-      latest_name =
-        entries
-        |> Keyword.keys()
-        |> Enum.map(&to_string/1)
-        |> Enum.map(&Version.parse!/1)
-        |> Enum.max(Version)
-        |> to_string()
-
-      entries =
-        entries
-        |> Enum.map(fn {k, v} ->
-          "v" <> name = v.tag_name
-
-          v =
-            v
-            |> release_rename_keys(:elixir)
-            |> Map.put(:name, name)
-
-          {:"#{k}", v}
-        end)
-
-      new_entry = %{
-        latest: latest_name,
-        releases: sort_by_version_key(entries, :desc)
-      }
-
-      {major_minor, new_entry}
-    end
-    |> sort_releases(:desc)
   end
 
   defp sort_releases(releases, order) do
@@ -133,20 +39,6 @@ defmodule BeamLangsMetaData.Util do
     )
   end
 
-  defp format_release_patches(list, project) when is_list(list) do
-    for entry <- list do
-      entry = release_rename_keys(entry, project)
-
-      entry =
-        for {k, v} <- entry, into: %{} do
-          {k, use_url(v)}
-        end
-        |> filter_keys(:otp)
-
-      {String.to_atom(entry[:name]), entry}
-    end
-  end
-
   # returns the MAJOR.MINOR atom version of a version
   defp major_minor(string) when is_binary(string),
     do: string |> String.to_atom() |> major_minor()
@@ -162,31 +54,6 @@ defmodule BeamLangsMetaData.Util do
 
   # defp nilify(""), do: nil
   # defp nilify(term), do: term
-
-  defp release_rename_keys(map, :elixir) when is_map(map) do
-    map
-    |> map_rename_key(:html_url, :release_url)
-  end
-
-  defp release_rename_keys(map, :otp) when is_map(map) do
-    map
-    # |> map_rename_key(:html, :doc_html)
-    # |> map_rename_key(:man, :doc_man)
-    |> map_rename_key(:readme, :readme_url)
-    |> map_rename_key(:html_url, :release_url)
-  end
-
-  defp map_rename_key(map, key, new_key) when is_map(map) do
-    if Map.has_key?(map, key) and not Map.has_key?(map, new_key) do
-      {value, updated_map} = Map.pop(map, key)
-      Map.put(updated_map, new_key, value)
-    else
-      map
-    end
-  end
-
-  defp use_url(%{id: _id, url: url}), do: url
-  defp use_url(term), do: term
 
   # Compatiblity
   def compatibility_otp_elixir(elixir_otp_compatibility) do
@@ -239,41 +106,156 @@ defmodule BeamLangsMetaData.Util do
     term
   end
 
-  defp filter_keys(term, accepted_keys_atom) when is_atom(accepted_keys_atom) do
-    filter_keys(term, accepted_keys(accepted_keys_atom))
-  end
-
-  defp filter_keys(term, accepted_keys_list)
-       when (is_map(term) or is_list(term)) and is_list(accepted_keys_list) do
-    Enum.reduce(term, into(term), fn
-      {k, v}, acc ->
-        cond do
-          k == :assets ->
-            into(acc, {k, filter_keys(v, :assets)})
-
-          k in accepted_keys_list ->
-            into(acc, {k, filter_keys(v, accepted_keys_list)})
-
-          true ->
-            acc
-        end
-
-      elem, acc ->
-        into(acc, filter_keys(elem, accepted_keys_list))
-    end)
-  end
-
-  defp filter_keys(term, accepted_keys_list) when is_list(accepted_keys_list) do
-    term
-  end
-
-  # defp accepted_keys(:elixir), do: @accepted_keys
-  defp accepted_keys(:otp), do: @accepted_keys
-  defp accepted_keys(:assets), do: @assets_accepted_keys
-
   defp into(term) when is_map(term), do: %{}
   defp into(term) when is_list(term), do: []
 
   defp into(acc, {k, v}) when is_map(acc), do: Map.put(acc, k, v)
   defp into(acc, elem) when is_list(acc), do: [elem | acc]
+
+  # find the latest version of a list of relesases
+  defp get_latest_version(entries) do
+    entries
+    |> Keyword.keys()
+    |> Enum.map(&to_string/1)
+    |> Enum.map(&Version.parse!/1)
+    |> Enum.max(Version)
+    |> to_string()
+  end
+
+  defp build_assets(assets) do
+    for json_asset <- assets do
+      %{
+        content_type: json_asset.content_type,
+        created_at: json_asset.created_at,
+        download_url: json_asset.browser_download_url,
+        id: json_asset.id,
+        label: json_asset[:label],
+        name: json_asset.name,
+        node_id: json_asset.node_id,
+        size: json_asset.size,
+        state: json_asset.state,
+        url: json_asset.url
+      }
+    end
+  end
+
+  def build_releases(list, :elixir) do
+    list = convert_keys_to_atoms(list)
+
+    grouped =
+      Enum.group_by(list, fn x -> major_minor(String.trim_leading(x[:tag_name], "v")) end, fn x ->
+        {String.to_atom(String.trim_leading(x[:tag_name], "v")), x}
+      end)
+
+    pre_filtered =
+      Enum.reject(grouped, fn {k, _v} ->
+        Version.match?(to_version!(to_string(k)), "< 1.0.0")
+      end)
+
+    for {major_minor, entries} <- pre_filtered do
+      latest_name = get_latest_version(entries)
+
+      entries
+      |> Keyword.keys()
+      |> Enum.map(&to_string/1)
+      |> Enum.map(&Version.parse!/1)
+      |> Enum.max(Version)
+      |> to_string()
+
+      entries =
+        entries
+        |> Enum.map(fn {version, json_entry} ->
+          assets = build_assets(json_entry.assets)
+
+          entry = %{
+            assets: assets,
+            assets_url: json_entry.url,
+            body: json_entry.body,
+            created_at: json_entry.created_at,
+            draft: json_entry.draft,
+            release_url: json_entry.html_url,
+            id: json_entry.id,
+            name: String.trim_leading(json_entry.tag_name, "v"),
+            node_id: json_entry.node_id,
+            prerelease: json_entry.prerelease,
+            published_at: json_entry.published_at,
+            tag_name: json_entry.tag_name,
+            tarball_url: json_entry.tarball_url,
+            target_commitish: json_entry.target_commitish,
+            upload_url: json_entry.upload_url,
+            url: json_entry.url,
+            zipball_url: json_entry.zipball_url
+          }
+
+          {:"#{version}", entry}
+        end)
+
+      new_entry = %{
+        latest: latest_name,
+        releases: entries |> sort_by_version_key(:desc)
+      }
+
+      {major_minor, new_entry}
+    end
+    |> sort_releases(:desc)
+  end
+
+  def build_releases(list, :otp) do
+    list = convert_keys_to_atoms(list)
+
+    pre_filtered =
+      Enum.filter(list, fn %{release: major_string} ->
+        version = to_version!(major_string)
+        Version.match?(version, @otp_version_requirement)
+      end)
+
+    for %{release: major_string, patches: entries, latest: _latest} <- pre_filtered do
+      entries =
+        entries
+        |> Enum.map(fn %{name: name} = json_entry ->
+          entry =
+            if json_entry[:body] do
+              assets = build_assets(json_entry.assets)
+
+              %{
+                assets: assets,
+                assets_url: json_entry.url,
+                body: json_entry.body,
+                created_at: json_entry.created_at,
+                draft: json_entry.draft,
+                release_url: json_entry.html_url,
+                id: json_entry.id,
+                name: name,
+                node_id: json_entry.node_id,
+                prerelease: json_entry.prerelease,
+                published_at: json_entry.published_at,
+                tag_name: json_entry.tag_name,
+                tarball_url: json_entry.tarball_url,
+                target_commitish: json_entry.target_commitish,
+                upload_url: json_entry.upload_url,
+                url: json_entry.url,
+                zipball_url: json_entry.zipball_url
+              }
+            else
+              %{
+                created_at: json_entry.created_at,
+                name: name,
+                tag_name: json_entry.tag_name,
+                tarball_url: json_entry.tarball_url
+              }
+            end
+
+          {:"#{name}", entry}
+        end)
+        |> sort_by_version_key(:desc)
+
+      new_entry = %{
+        latest: entries |> List.first() |> elem(0) |> to_string(),
+        releases: entries
+      }
+
+      {:"#{major_string}", new_entry}
+    end
+    |> sort_releases(:desc)
+  end
 end
