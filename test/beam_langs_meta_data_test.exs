@@ -6,35 +6,7 @@ defmodule BeamLangsMetaDataTest do
     elixir_releases = BeamLangsMetaData.elixir_releases()
     otp_releases = BeamLangsMetaData.otp_releases()
 
-    {:ok, %{elixir_releases: elixir_releases, otp_releases: otp_releases}}
-  end
-
-  describe "elixir_releases/0" do
-    test "does not include filtered keys", %{elixir_releases: elixir_releases} do
-      assert Keyword.keyword?(elixir_releases) == true
-
-      filtered_keys = [
-        :reactions,
-        :download_count,
-        :updated_at,
-        :author,
-        :uploader,
-        :followers_url
-      ]
-
-      for {major_minor, %{latest: latest_otp_version, releases: releases_kw}} <- elixir_releases,
-          {version_atom, release_map} <- releases_kw do
-        releases_keys = Map.keys(release_map)
-        refute filtered_keys in releases_keys
-
-        assert is_atom(major_minor) == true
-        assert is_binary(latest_otp_version) == true
-        assert is_atom(version_atom) == true
-      end
-    end
-
-    test "converted values", %{elixir_releases: elixir_releases} do
-      required_keys = ~w[
+    required_keys = ~w[
         assets
         assets_url
         body
@@ -54,19 +26,61 @@ defmodule BeamLangsMetaDataTest do
         zipball_url
       ]a
 
-      required_asset_keys = [
-        :download_url,
-        :content_type,
-        :created_at,
-        :id,
-        :label,
-        :name,
-        :node_id,
-        :size,
-        :state,
-        :url
-      ]
+    required_asset_keys = ~w[
+        download_url
+        content_type
+        created_at
+        id
+        label
+        name
+        node_id
+        size
+        state
+        url
+      ]a
 
+    excluded_keys = ~w[
+        reactions
+        download_count
+        updated_at
+        author
+        uploader
+        followers_url
+      ]a
+
+    {:ok,
+     %{
+       elixir_releases: elixir_releases,
+       otp_releases: otp_releases,
+       required_keys: required_keys,
+       required_asset_keys: required_asset_keys,
+       excluded_keys: excluded_keys
+     }}
+  end
+
+  describe "elixir_releases/0" do
+    test "does not include filtered keys", %{
+      elixir_releases: elixir_releases,
+      excluded_keys: excluded_keys
+    } do
+      assert Keyword.keyword?(elixir_releases) == true
+
+      for {major_minor, %{latest: latest_otp_version, releases: releases_kw}} <- elixir_releases,
+          {version_atom, release_map} <- releases_kw do
+        releases_keys = Map.keys(release_map)
+        refute excluded_keys in releases_keys
+
+        assert is_atom(major_minor) == true
+        assert is_binary(latest_otp_version) == true
+        assert is_atom(version_atom) == true
+      end
+    end
+
+    test "converted values", %{
+      elixir_releases: elixir_releases,
+      required_keys: required_keys,
+      required_asset_keys: required_asset_keys
+    } do
       for {_major_minor, %{latest: _latest, releases: releases_kw}} <- elixir_releases,
           {_version_atom, release_map} <- releases_kw do
         if id = get_in(release_map, [:id]) do
@@ -124,22 +138,16 @@ defmodule BeamLangsMetaDataTest do
   end
 
   describe "otp_releases/0" do
-    test "does not include filtered keys", %{otp_releases: otp_releases} do
+    test "does not include filtered keys", %{
+      otp_releases: otp_releases,
+      excluded_keys: excluded_keys
+    } do
       assert Keyword.keyword?(otp_releases) == true
-
-      filtered_keys = [
-        :reactions,
-        :download_count,
-        :updated_at,
-        :author,
-        :uploader,
-        :followers_url
-      ]
 
       for {major, %{latest: latest_otp_version, releases: releases_kw}} <- otp_releases,
           {version_atom, release_map} <- releases_kw do
         releases_keys = Map.keys(release_map)
-        refute filtered_keys in releases_keys
+        refute excluded_keys in releases_keys
 
         assert is_atom(major) == true
         assert is_binary(latest_otp_version) == true
@@ -147,42 +155,12 @@ defmodule BeamLangsMetaDataTest do
       end
     end
 
-    # @tag :skip
-    test "converted values", %{otp_releases: otp_releases} do
-      required_keys = [:created_at, :name, :tag_name, :tarball_url]
-
-      required_asset_keys = [
-        :download_url,
-        :content_type,
-        :created_at,
-        :id,
-        :label,
-        :name,
-        :node_id,
-        :size,
-        :state,
-        :url
-      ]
-
-      required_keys_full = ~w[
-        assets
-        assets_url
-        body
-        created_at
-        draft
-        id
-        name
-        node_id
-        prerelease
-        published_at
-        release_url
-        tag_name
-        tarball_url
-        target_commitish
-        upload_url
-        url
-        zipball_url
-      ]a
+    test "converted values", %{
+      otp_releases: otp_releases,
+      required_keys: required_keys,
+      required_asset_keys: required_asset_keys
+    } do
+      required_simple_keys = [:created_at, :name, :tag_name, :tarball_url]
 
       required_download_keys = [
         :doc_html,
@@ -200,7 +178,7 @@ defmodule BeamLangsMetaDataTest do
         end
 
         if Map.has_key?(release_map, :body) do
-          for key <- required_keys_full do
+          for key <- required_keys do
             unless Map.has_key?(release_map, key) do
               flunk("#{key} not found in #{inspect(release_map)}")
             end
@@ -229,7 +207,7 @@ defmodule BeamLangsMetaDataTest do
             end
           end
         else
-          for key <- required_keys do
+          for key <- required_simple_keys do
             unless Map.has_key?(release_map, key) do
               flunk("#{key} not found in #{inspect(release_map)}")
             end
