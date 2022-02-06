@@ -40,6 +40,15 @@ defmodule BeamLangsMetaData.MixProject do
 
   defp aliases do
     [
+      setup: [
+        "deps.get",
+        "deps.update --all"
+      ],
+      prepare: [
+        "format",
+        "deps.clean --unused --unlock",
+        "deps.unlock --unsued"
+      ],
       validate: [
         "format --check-formatted",
         "deps.unlock --check-unused",
@@ -48,15 +57,6 @@ defmodule BeamLangsMetaData.MixProject do
         "dialyzer",
         "docs",
         "credo --ignore Credo.Check.Design.TagTODO"
-      ],
-      prepare: [
-        "format",
-        "deps.clean --unused --unlock",
-        "deps.unlock --unsued"
-      ],
-      setup: [
-        "deps.get",
-        "deps.update --all"
       ],
       all: [
         "setup",
@@ -69,10 +69,11 @@ defmodule BeamLangsMetaData.MixProject do
 
   defp test_isolated() do
     fn _args ->
-      env = %{"MIX_ENV" => "test"}
+      env_test = %{"MIX_ENV" => "test"}
 
-      with {:"test setup", {_, 0}} <- {:"test setup", System.cmd("mix", ~w[setup], env: env)},
-           {:test, {_, 0}} <- {:test, System.cmd("mix", ~w[test], env: env)} do
+      with {:"test setup", {_, 0}} <-
+             {:"test setup", System.cmd("mix", ~w[setup], env: env_test)},
+           {:test, {_, 0}} <- {:test, System.cmd("mix", ~w[test], env: env_test)} do
         true
       else
         {type, {output, _}} ->
