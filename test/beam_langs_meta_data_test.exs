@@ -88,6 +88,7 @@ defmodule BeamLangsMetaDataTest do
         end
 
         assert get_in(release_map, [:id]) |> is_integer() == true
+        assert get_in(release_map, [:tag_name]) |> is_binary() == true
 
         assert get_in(release_map, [:assets, Access.all(), :id]) |> Enum.all?(&is_integer/1) ==
                  true
