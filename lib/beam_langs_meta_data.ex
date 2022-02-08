@@ -158,7 +158,7 @@ defmodule BeamLangsMetaData do
 
   @type otp_download_key :: :doc_html | :doc_man | :readme | :source | :win32 | :win64
 
-  @doc """
+  @doc ~S"""
   Returns Elixir releases data.
 
   The data is a stripped down version of the Elixir releases JSON files from GitHub,
@@ -175,56 +175,123 @@ defmodule BeamLangsMetaData do
 
       > BeamLangsMetaData.elixir_releases()
       [
-        %{
-          "assets" => [
-            %{
-              "browser_download_url" => "https://github.com/elixir-lang/elixir/releases/download/v1.13.0/Docs.zip",
-              "content_type" => "application/zip",
-              "created_at" => "2021-12-03T18:25:32Z",
-              "id" => 50943932,
-              "label" => nil,
-              "name" => "Docs.zip",
-              "node_id" => "RA_kwDOABLXGs4DCVe8",
-              "size" => 2023670,
-              "state" => "uploaded",
-              "url" => "https://api.github.com/repos/elixir-lang/elixir/releases/assets/50943932"
+        "1.13": %{
+          latest: "1.13.0",
+          releases: [
+            "1.13.0": %{
+              assets: [
+                %{
+                  content_type: "application/zip",
+                  created_at: "2021-12-03T18:25:36Z",
+                  download_url:
+                    "https://github.com/elixir-lang/elixir/releases/download/v1.13.0/Precompiled.zip",
+                  id: 50_943_934,
+                  label: nil,
+                  name: "Precompiled.zip",
+                  node_id: "RA_kwDOABLXGs4DCVe-",
+                  size: 6_230_020,
+                  state: "uploaded",
+                  url: "https://api.github.com/repos/elixir-lang/elixir/releases/assets/50943934"
+                },
+                %{
+                  content_type: ...,
+                  created_at: ...,
+                  download_url: ...,
+                  id: ...,
+                  label: ...,
+                  name: ...,
+                  node_id: ...,
+                  size: ...,
+                  state: ...,
+                  url: ...
+                }
+              ],
+              assets_url: "https://api.github.com/repos/elixir-lang/elixir/releases/54599470",
+              body:
+                "Announcement: https://elixir-lang.org/blog/2021/12/03/elixir-v1-13-0-released/\r\n\r\n" <> ...,
+              created_at: "2021-12-03T18:03:54Z",
+              draft: false,
+              id: 54_599_470,
+              name: "1.13.0",
+              node_id: "RE_kwDOABLXGs4DQR8u",
+              prerelease: false,
+              published_at: "2021-12-03T18:25:51Z",
+              release_url: "https://github.com/elixir-lang/elixir/releases/tag/v1.13.0",
+              tag_name: "v1.13.0",
+              tarball_url: "https://api.github.com/repos/elixir-lang/elixir/tarball/v1.13.0",
+              target_commitish: "main",
+              upload_url:
+                "https://uploads.github.com/repos/elixir-lang/elixir/releases/54599470/assets{?name,label}",
+              url: "https://api.github.com/repos/elixir-lang/elixir/releases/54599470",
+              zipball_url: "https://api.github.com/repos/elixir-lang/elixir/zipball/v1.13.0"
             },
-            %{
-              "browser_download_url" => "https://github.com/elixir-lang/elixir/releases/download/v1.13.0/Precompiled.zip",
-              "content_type" => "application/zip",
-              "created_at" => "2021-12-03T18:25:36Z",
-              "download_count" => 958,
-              "id" => 50943934,
-              "label" => nil,
-              "name" => "Precompiled.zip",
-              "node_id" => "RA_kwDOABLXGs4DCVe-",
-              "size" => 6230020,
-              "state" => "uploaded",
-              "url" => "https://api.github.com/repos/elixir-lang/elixir/releases/assets/50943934"
-            }
-          ],
-          "assets_url" => "https://api.github.com/repos/elixir-lang/elixir/releases/54599470/assets",
-          "body" => "Announcement: " <> ...,
-          "created_at" => "2021-12-03T18:03:54Z",
-          "draft" => false,
-          "release_url" => "https://github.com/elixir-lang/elixir/releases/tag/v1.13.0",
-          "id" => 54599470,
-          "name" => "",
-          "node_id" => "RE_kwDOABLXGs4DQR8u",
-          "prerelease" => false,
-          "published_at" => "2021-12-03T18:25:51Z",
-          "tag_name" => "v1.13.0",
-          "tarball_url" => "https://api.github.com/repos/elixir-lang/elixir/tarball/v1.13.0",
-          "target_commitish" => "main",
-          "upload_url" => "https://uploads.github.com/repos/elixir-lang/elixir/releases/54599470/assets{?name,label}",
-          "url" => "https://api.github.com/repos/elixir-lang/elixir/releases/54599470",
-          "zipball_url" => "https://api.github.com/repos/elixir-lang/elixir/zipball/v1.13.0"
+            "1.13.0-rc.1": %{
+              assets: [
+                %{...},
+                %{...},
+              ],
+              assets_url: ...,
+              body: ...,
+              created_at: ...,
+              draft: ...,
+              id: ...,
+              name: ...,
+              node_id: ...,
+              prerelease: ...,
+              published_at: ...,
+              release_url: ...,
+              tag_name: ...,
+              tarball_url: ...,
+              target_commitish: ...,
+              upload_url: ...,
+              url: ...,
+              zipball_url: ...
+            },
+            "1.13.0-rc.0": %{...}
+          ]
         },
-        %{"assets" => [...], ...},
-        %{...},
-        ...
+        "1.12": %{
+          latest: "1.12.3",
+          releases: [
+            "1.12.3": %{
+              assets: [
+                %{...},
+                %{...}
+              ],
+              assets_url: ...,
+              body: ...,
+              created_at: ...,
+              draft: ...,
+              id: ...,
+              name: ...,
+              node_id: ...,
+              prerelease: ...,
+              published_at: ...,
+              release_url: ...,
+              tag_name: ...,
+              tarball_url: ...,
+              target_commitish: ...,
+              upload_url: ...,
+              url: ...,
+              zipball_url: ...
+            },
+            "1.12.2": %{...},
+            "1.12.1": %{...},
+            "1.12.0": %{...},
+            "1.12.0-rc.1": %{...},
+            "1.12.0-rc.0": %{...},
+          ]
+        },
+        "1.11": %{
+          latest: "1.11.4",
+          releases: [...],
+        },
+        ...,
+       "1.0": %{
+          latest: "1.0.5",
+          releases: [...],
+        }
       ]
-
   """
   # @spec elixir_releases() :: nonempty_list(elixir_release_data())
   @spec elixir_releases() ::
@@ -241,23 +308,23 @@ defmodule BeamLangsMetaData do
                    |> build_releases(:elixir)
   def elixir_releases(), do: @elixir_releases
 
-  @doc """
+  @doc ~S"""
   Returns Erlang/OTP releases data.
 
   ## Examples
 
       > BeamLangsMetaData.otp_releases()
       [
-        "24.2": %{
+        "24": %{
           latest: "24.2.1",
           releases: [
             "24.2.1": %{
               assets: [
                 %{
-                  browser_download_url: "https://github.com/erlang/otp/releases/download/OTP-24.2.1/SHA256.txt",
                   content_type: "text/plain",
                   created_at: "2022-01-25T17:22:17Z",
-                  id: 54929204,
+                  download_url: "https://github.com/erlang/otp/releases/download/OTP-24.2.1/SHA256.txt",
+                  id: 54_929_204,
                   label: "",
                   name: "SHA256.txt",
                   node_id: "RA_kwDOAAW4j84DRic0",
@@ -266,12 +333,12 @@ defmodule BeamLangsMetaData do
                   url: "https://api.github.com/repos/erlang/otp/releases/assets/54929204"
                 },
                 %{
-                  browser_download_url: ...,
-                  content_type: ...,
+                  content_type: "application/x-msdownload",
                   created_at: ...,
+                  download_url: "https://github.com/erlang/otp/releases/download/OTP-24.2.1/otp_win64_24.2.1.exe",
                   id: ...,
                   label: "",
-                  name: ...,
+                  name: "otp_win64_24.2.1.exe",
                   node_id: ...,
                   size: ...,
                   state: ...,
@@ -279,59 +346,60 @@ defmodule BeamLangsMetaData do
                 },
                 ...
               ],
-              assets_url: "https://api.github.com/repos/erlang/otp/releases/57941240/assets",
-              body: "```\nPatch Package:           OTP 24.2.1\nGit Tag:" <>...",
+              assets_url: "https://api.github.com/repos/erlang/otp/releases/57941240",
+              body:
+                "```\nPatch Package:           OTP 24.2.1\nGit Tag:" <> ...,
               created_at: "2022-01-22T08:41:48Z",
               draft: false,
-              release_url: "https://github.com/erlang/otp/releases/tag/OTP-24.2.1",
-              id: 57941240,
+              id: 57_941_240,
               name: "24.2.1",
               node_id: "RE_kwDOAAW4j84DdBz4",
               prerelease: false,
               published_at: "2022-01-25T17:12:12Z",
+              release_url: "https://github.com/erlang/otp/releases/tag/OTP-24.2.1",
               tag_name: "OTP-24.2.1",
               tarball_url: "https://api.github.com/repos/erlang/otp/tarball/OTP-24.2.1",
               target_commitish: "master",
-              upload_url: "https://uploads.github.com/repos/erlang/otp/releases/57941240/assets{?name,label}",
+              upload_url:
+                "https://uploads.github.com/repos/erlang/otp/releases/57941240/assets{?name,label}",
               url: "https://api.github.com/repos/erlang/otp/releases/57941240",
               zipball_url: "https://api.github.com/repos/erlang/otp/zipball/OTP-24.2.1"
             },
             "24.2": %{
               assets: [
-                %{
-                  browser_download_url: ...,
-                  content_type: ...,
-                  created_at: ...,
-                  id: ...,
-                  label: "",
-                  name: ...,
-                  node_id: ...,
-                  size: ...,
-                  state: ...,
-                  url: ...,
-                },
+                %{...},
                 ...
               ],
-              assets_url: "https://api.github.com/repos/erlang/otp/releases/55351570/assets",
-              body: "Erlang/OTP 24.2 is the second maintenance patch release for OTP 24" <> ...,
-              created_at: "2021-12-14T18:04:03Z",
-              draft: false,
-              release_url: "https://github.com/erlang/otp/releases/tag/OTP-24.2",
-              id: 55351570,
-              name: "24.2",
-              node_id: "RE_kwDOAAW4j84DTJkS",
-              prerelease: false,
-              published_at: "2021-12-15T14:31:36Z",
-              tag_name: "OTP-24.2",
-              tarball_url: "https://api.github.com/repos/erlang/otp/tarball/OTP-24.2",
-              target_commitish: "master",
-              upload_url: "https://uploads.github.com/repos/erlang/otp/releases/55351570/assets{?name,label}",
-              url: "https://api.github.com/repos/erlang/otp/releases/55351570",
-              zipball_url: "https://api.github.com/repos/erlang/otp/zipball/OTP-24.2"
+              assets_url: ...,
+              body: ...,
+              created_at: ...,
+              draft: ...,
+              id: ...,
+              name: ...,
+              node_id: ...,
+              prerelease: ...,
+              published_at: ...,
+              release_url: ...,
+              tag_name: ...,
+              tarball_url: ...,
+              target_commitish: ...,
+              upload_url: ...,
+              url: ...,
+              zipball_url: ...
             },
+            "24.1.7": %{...},
+            "24.1.6": %{...},
+            ...,
+            "24.0": %{...},
+            "24.0-rc3": %{...},
             ...
           ]
-        }
+        },
+        "23": %{
+          latest: "23.3.4",
+          releases: [...]
+        },
+        ...
       ]
 
   """
