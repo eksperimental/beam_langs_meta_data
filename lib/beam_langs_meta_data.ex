@@ -159,7 +159,7 @@ defmodule BeamLangsMetaData do
   @type otp_download_key :: :doc_html | :doc_man | :readme | :source | :win32 | :win64
 
   @doc ~S"""
-  Returns Elixir releases data.
+  Returns Elixir releases data, including final and pre-releases.
 
   The data is a stripped down version of the Elixir releases JSON files from GitHub,
   decoded into a list of maps.
@@ -309,7 +309,7 @@ defmodule BeamLangsMetaData do
   def elixir_releases(), do: @elixir_releases
 
   @doc ~S"""
-  Returns Erlang/OTP releases data.
+  Returns Erlang/OTP releases data, including final and pre-releases.
 
   ## Examples
 
