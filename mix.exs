@@ -6,7 +6,9 @@ defmodule BeamLangsMetaData.MixProject do
   @repo_url "https://github.com/eksperimental/beam_langs_meta_data"
 
   @description """
-  Provides meta-data for Elixir and Erlang/OTP.
+  Provides meta-data for BEAM languages.
+
+  Currently Elixir and Erlang/OTP are supported.
 
   The information in this module is regularly updated, and stored with every new release of this library.
   This library does not download information neither at compile time nor at real time.
@@ -99,8 +101,7 @@ defmodule BeamLangsMetaData.MixProject do
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:credo, "~> 1.6", only: [:dev], runtime: false},
       {:gradient, github: "esl/gradient", only: [:dev], runtime: false},
-      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
-      # {:ex_doc, git: "https://github.com/elixir-lang/ex_doc.git", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.28", only: :dev, runtime: false}
     ]
   end
 

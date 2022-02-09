@@ -2,7 +2,7 @@ defmodule BeamLangsMetaData do
   @moduledoc """
   Provides meta-data for BEAM languages.
 
-  So far the only two supported languages are Elixir and Erlang/OTP.
+  Currently Elixir and Erlang/OTP are supported.
 
   The information in this module is regularly updated, and stored with every new release of this library.
   This library does not download information neither at compile time nor at real time.
