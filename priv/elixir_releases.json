@@ -11,6 +11,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDIzNDIyNg==",
         "size": 2633633,
         "state": "uploaded",
+        "updated_at": "2014-09-10T12:48:32Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/234226"
       }
@@ -45,6 +46,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI2MTIyMw==",
         "size": 2665392,
         "state": "uploaded",
+        "updated_at": "2014-10-07T11:49:25Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/261223"
       }
@@ -79,6 +81,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3Njg1Ng==",
         "size": 2667312,
         "state": "uploaded",
+        "updated_at": "2014-10-21T17:36:20Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/276856"
       }
@@ -113,6 +116,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQxOTU1Mg==",
         "size": 2662739,
         "state": "uploaded",
+        "updated_at": "2015-02-12T10:12:26Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/419552"
       }
@@ -147,6 +151,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDUxMTQ5NQ==",
         "size": 2671221,
         "state": "uploaded",
+        "updated_at": "2015-04-07T21:40:38Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/511495"
       }
@@ -181,6 +186,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDY3MzMyOQ==",
         "size": 2684516,
         "state": "uploaded",
+        "updated_at": "2015-06-29T08:04:32Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/673329"
       }
@@ -215,6 +221,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDg5MjcwMA==",
         "size": 2926646,
         "state": "uploaded",
+        "updated_at": "2015-09-25T08:57:11Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/892700"
       },
@@ -228,6 +235,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDg5MjcwMg==",
         "size": 1021171,
         "state": "uploaded",
+        "updated_at": "2015-09-25T08:57:11Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/892702"
       }
@@ -262,6 +270,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDkwMDQ0MA==",
         "size": 2927293,
         "state": "uploaded",
+        "updated_at": "2015-09-28T21:37:27Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/900440"
       },
@@ -275,6 +284,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDkwMDQ0NQ==",
         "size": 1021417,
         "state": "uploaded",
+        "updated_at": "2015-09-28T21:37:27Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/900445"
       }
@@ -309,6 +319,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDExNjkxOTM=",
         "size": 3251450,
         "state": "uploaded",
+        "updated_at": "2016-01-01T10:58:20Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1169193"
       },
@@ -322,6 +333,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDExNjkxOTU=",
         "size": 1060538,
         "state": "uploaded",
+        "updated_at": "2016-01-01T10:58:20Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1169195"
       }
@@ -356,6 +368,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEyMTEzODk=",
         "size": 3257459,
         "state": "uploaded",
+        "updated_at": "2016-01-14T18:32:08Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1211389"
       },
@@ -369,6 +382,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEyMTEzODg=",
         "size": 1061381,
         "state": "uploaded",
+        "updated_at": "2016-01-14T18:32:08Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1211388"
       }
@@ -403,6 +417,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEyNjE5NjU=",
         "size": 3179457,
         "state": "uploaded",
+        "updated_at": "2016-01-31T09:39:12Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1261965"
       },
@@ -416,6 +431,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEyNjE5NjQ=",
         "size": 1061577,
         "state": "uploaded",
+        "updated_at": "2016-01-31T09:39:12Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1261964"
       }
@@ -450,6 +466,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzMzc1NDM=",
         "size": 3258736,
         "state": "uploaded",
+        "updated_at": "2016-02-21T21:36:44Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1337543"
       },
@@ -463,6 +480,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzMzc1NDY=",
         "size": 1066628,
         "state": "uploaded",
+        "updated_at": "2016-02-21T21:36:44Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1337546"
       }
@@ -497,6 +515,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE0OTc0OTE=",
         "size": 3279259,
         "state": "uploaded",
+        "updated_at": "2016-04-01T10:13:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1497491"
       },
@@ -510,6 +529,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE0OTc0OTI=",
         "size": 1070891,
         "state": "uploaded",
+        "updated_at": "2016-04-01T10:13:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1497492"
       }
@@ -544,6 +564,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE2MjEzMzI=",
         "size": 3281888,
         "state": "uploaded",
+        "updated_at": "2016-04-30T11:51:59Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1621332"
       },
@@ -557,6 +578,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE2MjEzMzE=",
         "size": 1071477,
         "state": "uploaded",
+        "updated_at": "2016-04-30T11:51:59Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1621331"
       }
@@ -591,6 +613,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3NjU3MzQ=",
         "size": 3558021,
         "state": "uploaded",
+        "updated_at": "2016-05-30T13:07:13Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1765734"
       },
@@ -604,6 +627,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3NjU3MjQ=",
         "size": 1134922,
         "state": "uploaded",
+        "updated_at": "2016-05-30T13:07:13Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1765724"
       }
@@ -638,6 +662,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4MDEwOTU=",
         "size": 3284415,
         "state": "uploaded",
+        "updated_at": "2016-06-06T13:38:25Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1801095"
       },
@@ -651,6 +676,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4MDEwOTQ=",
         "size": 1071677,
         "state": "uploaded",
+        "updated_at": "2016-06-06T13:38:25Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1801094"
       }
@@ -685,6 +711,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4MTYxMTA=",
         "size": 3571767,
         "state": "uploaded",
+        "updated_at": "2016-06-08T19:19:30Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1816110"
       },
@@ -698,6 +725,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4MTYxMDk=",
         "size": 1142598,
         "state": "uploaded",
+        "updated_at": "2016-06-08T19:19:30Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1816109"
       }
@@ -732,6 +760,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4NzkzODc=",
         "size": 3566087,
         "state": "uploaded",
+        "updated_at": "2016-06-21T10:35:08Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1879387"
       },
@@ -745,6 +774,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4NzkzODY=",
         "size": 1134311,
         "state": "uploaded",
+        "updated_at": "2016-06-21T10:35:08Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1879386"
       }
@@ -779,6 +809,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE5MTEwOTk=",
         "size": 3568776,
         "state": "uploaded",
+        "updated_at": "2016-06-28T10:02:27Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1911099"
       },
@@ -792,6 +823,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE5MTEwOTg=",
         "size": 1141778,
         "state": "uploaded",
+        "updated_at": "2016-06-28T10:02:27Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1911098"
       }
@@ -826,6 +858,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE5OTY4NTc=",
         "size": 3573688,
         "state": "uploaded",
+        "updated_at": "2016-07-15T16:56:50Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1996857"
       },
@@ -839,6 +872,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE5OTY4NTQ=",
         "size": 1158314,
         "state": "uploaded",
+        "updated_at": "2016-07-15T16:56:50Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/1996854"
       }
@@ -873,6 +907,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDIzMjk0ODE=",
         "size": 3576623,
         "state": "uploaded",
+        "updated_at": "2016-09-17T16:22:03Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2329481"
       },
@@ -886,6 +921,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDIzMjk0ODA=",
         "size": 1175215,
         "state": "uploaded",
+        "updated_at": "2016-09-17T16:22:03Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2329480"
       }
@@ -920,6 +956,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI0NDYwNjM=",
         "size": 3574463,
         "state": "uploaded",
+        "updated_at": "2016-10-09T14:40:03Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2446063"
       },
@@ -933,6 +970,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI0NDYwNjg=",
         "size": 1167502,
         "state": "uploaded",
+        "updated_at": "2016-10-09T14:40:03Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2446068"
       }
@@ -967,6 +1005,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3MjYwMzU=",
         "size": 3754595,
         "state": "uploaded",
+        "updated_at": "2016-11-28T10:38:41Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2726035"
       },
@@ -980,6 +1019,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3MjYwMzM=",
         "size": 1215316,
         "state": "uploaded",
+        "updated_at": "2016-11-28T10:38:41Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2726033"
       }
@@ -1014,6 +1054,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3Njk5OTE=",
         "size": 3761780,
         "state": "uploaded",
+        "updated_at": "2016-12-05T21:02:34Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2769991"
       },
@@ -1027,6 +1068,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3Njk5OTY=",
         "size": 1216531,
         "state": "uploaded",
+        "updated_at": "2016-12-05T21:02:34Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2769996"
       }
@@ -1061,6 +1103,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI5MzA0MzM=",
         "size": 3763704,
         "state": "uploaded",
+        "updated_at": "2017-01-05T10:36:58Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2930433"
       },
@@ -1074,6 +1117,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI5Mjc4MjQ=",
         "size": 1216634,
         "state": "uploaded",
+        "updated_at": "2017-01-04T23:17:44Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/2927824"
       }
@@ -1108,6 +1152,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMwNjM4MTc=",
         "size": 3760651,
         "state": "uploaded",
+        "updated_at": "2017-01-26T12:16:58Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3063817"
       },
@@ -1121,6 +1166,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMwNjM4MzA=",
         "size": 1216864,
         "state": "uploaded",
+        "updated_at": "2017-01-26T12:16:58Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3063830"
       }
@@ -1155,6 +1201,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMyMDY2MTA=",
         "size": 3781796,
         "state": "uploaded",
+        "updated_at": "2017-02-16T14:44:04Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3206610"
       },
@@ -1168,6 +1215,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMyMDY2MDg=",
         "size": 1217863,
         "state": "uploaded",
+        "updated_at": "2017-02-16T14:44:04Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3206608"
       }
@@ -1202,6 +1250,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM4NzcyMTY=",
         "size": 3786115,
         "state": "uploaded",
+        "updated_at": "2017-05-15T12:51:41Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3877216"
       },
@@ -1215,6 +1264,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM4NzcyMTU=",
         "size": 2604581,
         "state": "uploaded",
+        "updated_at": "2017-05-15T12:51:41Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3877215"
       }
@@ -1249,6 +1299,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM4Nzg1MzE=",
         "size": 3786437,
         "state": "uploaded",
+        "updated_at": "2017-05-15T15:04:32Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3878531"
       },
@@ -1262,6 +1313,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM4Nzg1MzA=",
         "size": 2604590,
         "state": "uploaded",
+        "updated_at": "2017-05-15T15:04:32Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/3878530"
       }
@@ -1296,6 +1348,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQxNTcyOTk=",
         "size": 3787133,
         "state": "uploaded",
+        "updated_at": "2017-06-22T08:43:55Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4157299"
       },
@@ -1309,6 +1362,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQxNTcyOTg=",
         "size": 2621694,
         "state": "uploaded",
+        "updated_at": "2017-06-22T08:43:55Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4157298"
       }
@@ -1343,6 +1397,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQxNzkxNjc=",
         "size": 4033023,
         "state": "uploaded",
+        "updated_at": "2017-06-25T11:21:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4179167"
       },
@@ -1356,6 +1411,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQxNzkxNjY=",
         "size": 2668758,
         "state": "uploaded",
+        "updated_at": "2017-06-25T11:21:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4179166"
       }
@@ -1390,6 +1446,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQzMTA1NDA=",
         "size": 4090880,
         "state": "uploaded",
+        "updated_at": "2017-07-12T12:54:03Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4310540"
       },
@@ -1403,6 +1460,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQzMTA1NjY=",
         "size": 3434808,
         "state": "uploaded",
+        "updated_at": "2017-07-12T12:54:03Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4310566"
       }
@@ -1437,6 +1495,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQzNzE5MTg=",
         "size": 4097469,
         "state": "uploaded",
+        "updated_at": "2017-07-20T09:51:04Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4371918"
       },
@@ -1450,6 +1509,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQzNzE4NDQ=",
         "size": 3436058,
         "state": "uploaded",
+        "updated_at": "2017-07-20T09:51:04Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4371844"
       }
@@ -1484,6 +1544,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ0MDczMDE=",
         "size": 4097503,
         "state": "uploaded",
+        "updated_at": "2017-07-25T07:27:16Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4407301"
       },
@@ -1497,6 +1558,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ0MDczMDA=",
         "size": 3434712,
         "state": "uploaded",
+        "updated_at": "2017-07-25T07:27:16Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4407300"
       }
@@ -1531,6 +1593,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ0Nzc2MDc=",
         "size": 4098350,
         "state": "uploaded",
+        "updated_at": "2017-08-01T15:47:20Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4477607"
       },
@@ -1544,6 +1607,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ0Nzc2MDY=",
         "size": 1423039,
         "state": "uploaded",
+        "updated_at": "2017-08-01T15:47:20Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4477606"
       }
@@ -1578,6 +1642,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ5NTMxODI=",
         "size": 4102850,
         "state": "uploaded",
+        "updated_at": "2017-09-30T17:08:13Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4953182"
       },
@@ -1591,6 +1656,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ5NDQ3MDc=",
         "size": 1442433,
         "state": "uploaded",
+        "updated_at": "2017-09-29T12:10:47Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/4944707"
       }
@@ -1625,6 +1691,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU2NjgwNjk=",
         "size": 4102341,
         "state": "uploaded",
+        "updated_at": "2017-12-19T17:20:49Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5668069"
       },
@@ -1638,6 +1705,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU2NjgwNjc=",
         "size": 1445185,
         "state": "uploaded",
+        "updated_at": "2017-12-19T17:20:49Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5668067"
       }
@@ -1672,6 +1740,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU3MDcyNDA=",
         "size": 5150769,
         "state": "uploaded",
+        "updated_at": "2017-12-24T11:40:45Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5707240"
       },
@@ -1685,6 +1754,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU3MDcyMzg=",
         "size": 1484828,
         "state": "uploaded",
+        "updated_at": "2017-12-24T11:40:45Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5707238"
       }
@@ -1719,6 +1789,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU4NDAwMDg=",
         "size": 5158535,
         "state": "uploaded",
+        "updated_at": "2018-01-11T09:33:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5840008"
       },
@@ -1732,6 +1803,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU4NDAwMDc=",
         "size": 1484097,
         "state": "uploaded",
+        "updated_at": "2018-01-11T09:33:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5840007"
       }
@@ -1766,6 +1838,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU5MDMyNzU=",
         "size": 5158205,
         "state": "uploaded",
+        "updated_at": "2018-01-17T18:46:44Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5903275"
       },
@@ -1779,6 +1852,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDU5MDMyNzQ=",
         "size": 1482529,
         "state": "uploaded",
+        "updated_at": "2018-01-17T18:46:44Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/5903274"
       }
@@ -1813,6 +1887,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDYwMjM4ODA=",
         "size": 5165957,
         "state": "uploaded",
+        "updated_at": "2018-01-29T20:04:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6023880"
       },
@@ -1826,6 +1901,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDYwMjM4ODE=",
         "size": 1485617,
         "state": "uploaded",
+        "updated_at": "2018-01-29T20:04:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6023881"
       }
@@ -1860,6 +1936,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDYzNTEyMjI=",
         "size": 5180313,
         "state": "uploaded",
+        "updated_at": "2018-02-28T09:58:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6351222"
       },
@@ -1873,6 +1950,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDYzNTEyMjU=",
         "size": 1491638,
         "state": "uploaded",
+        "updated_at": "2018-02-28T09:58:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6351225"
       }
@@ -1907,6 +1985,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDY0NTU4OTI=",
         "size": 5184487,
         "state": "uploaded",
+        "updated_at": "2018-03-09T08:04:37Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6455892"
       },
@@ -1920,6 +1999,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDY0NTU4OTE=",
         "size": 1491777,
         "state": "uploaded",
+        "updated_at": "2018-03-09T08:04:37Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6455891"
       }
@@ -1954,6 +2034,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDY1MzMwNjg=",
         "size": 5185234,
         "state": "uploaded",
+        "updated_at": "2018-03-16T11:32:43Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6533068"
       },
@@ -1967,6 +2048,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDY1MzMwNjc=",
         "size": 1491834,
         "state": "uploaded",
+        "updated_at": "2018-03-16T11:32:43Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/6533067"
       }
@@ -2001,6 +2083,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDcwOTA1NTk=",
         "size": 5191411,
         "state": "uploaded",
+        "updated_at": "2018-05-07T11:35:04Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7090559"
       },
@@ -2014,6 +2097,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDcwOTA1NTg=",
         "size": 1492545,
         "state": "uploaded",
+        "updated_at": "2018-05-07T11:35:04Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7090558"
       }
@@ -2048,6 +2132,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDc1OTQwMzE=",
         "size": 5201086,
         "state": "uploaded",
+        "updated_at": "2018-06-19T22:28:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7594031"
       },
@@ -2061,6 +2146,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDc1OTQwMzI=",
         "size": 1493023,
         "state": "uploaded",
+        "updated_at": "2018-06-19T22:28:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7594032"
       }
@@ -2095,6 +2181,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDc4NjU5Mzg=",
         "size": 5332243,
         "state": "uploaded",
+        "updated_at": "2018-07-13T13:12:24Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7865938"
       },
@@ -2108,6 +2195,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDc4NjU5Mzc=",
         "size": 1627130,
         "state": "uploaded",
+        "updated_at": "2018-07-13T13:12:24Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7865937"
       }
@@ -2142,6 +2230,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDc5MzA5NDM=",
         "size": 5334933,
         "state": "uploaded",
+        "updated_at": "2018-07-19T10:16:07Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7930943"
       },
@@ -2155,6 +2244,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDc5MzA5NDI=",
         "size": 1629027,
         "state": "uploaded",
+        "updated_at": "2018-07-19T10:16:07Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/7930942"
       }
@@ -2189,6 +2279,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgwMDk2NzI=",
         "size": 5337365,
         "state": "uploaded",
+        "updated_at": "2018-07-25T20:44:28Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8009672"
       },
@@ -2202,6 +2293,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgwMDk2NzE=",
         "size": 1628750,
         "state": "uploaded",
+        "updated_at": "2018-07-25T20:44:28Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8009671"
       }
@@ -2236,6 +2328,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgwMjQ0MjY=",
         "size": 5338500,
         "state": "uploaded",
+        "updated_at": "2018-07-26T20:02:15Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8024426"
       },
@@ -2249,6 +2342,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgwMjQ0MjU=",
         "size": 1627600,
         "state": "uploaded",
+        "updated_at": "2018-07-26T20:02:15Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8024425"
       }
@@ -2283,6 +2377,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgxMzI4NTg=",
         "size": 5341086,
         "state": "uploaded",
+        "updated_at": "2018-08-05T07:21:14Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8132858"
       },
@@ -2296,6 +2391,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgxMzI4NTc=",
         "size": 1628230,
         "state": "uploaded",
+        "updated_at": "2018-08-05T07:21:14Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8132857"
       }
@@ -2330,6 +2426,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgzODQ0NzA=",
         "size": 5342430,
         "state": "uploaded",
+        "updated_at": "2018-08-24T18:53:14Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8384470"
       },
@@ -2343,6 +2440,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDgzODQ0Njk=",
         "size": 1629794,
         "state": "uploaded",
+        "updated_at": "2018-08-24T18:53:14Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/8384469"
       }
@@ -2377,6 +2475,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDkzOTYwMDA=",
         "size": 5344630,
         "state": "uploaded",
+        "updated_at": "2018-10-24T18:18:58Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/9396000"
       },
@@ -2390,6 +2489,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDkzOTU5OTk=",
         "size": 1630144,
         "state": "uploaded",
+        "updated_at": "2018-10-24T18:18:58Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/9395999"
       }
@@ -2424,6 +2524,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwMjg5ODU0",
         "size": 5151580,
         "state": "uploaded",
+        "updated_at": "2018-12-24T14:42:39Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10289854"
       },
@@ -2437,6 +2538,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwMjg5ODUz",
         "size": 1547015,
         "state": "uploaded",
+        "updated_at": "2018-12-24T14:42:39Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10289853"
       }
@@ -2471,6 +2573,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwMzg0MzAy",
         "size": 5151580,
         "state": "uploaded",
+        "updated_at": "2019-01-02T19:32:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10384302"
       },
@@ -2484,6 +2587,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwMzg0MzAx",
         "size": 1547015,
         "state": "uploaded",
+        "updated_at": "2019-01-02T19:32:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10384301"
       }
@@ -2518,6 +2622,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwNTYyMzcy",
         "size": 5153717,
         "state": "uploaded",
+        "updated_at": "2019-01-14T15:03:44Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10562372"
       },
@@ -2531,6 +2636,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwNTYyMzcx",
         "size": 1547760,
         "state": "uploaded",
+        "updated_at": "2019-01-14T15:03:44Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10562371"
       }
@@ -2565,6 +2671,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwODQ2NTk4",
         "size": 5154710,
         "state": "uploaded",
+        "updated_at": "2019-01-30T10:47:56Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10846598"
       },
@@ -2578,6 +2685,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEwODQ2NTk2",
         "size": 1551525,
         "state": "uploaded",
+        "updated_at": "2019-01-30T10:47:56Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/10846596"
       }
@@ -2612,6 +2720,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEyNTkyMzM2",
         "size": 5156249,
         "state": "uploaded",
+        "updated_at": "2019-05-12T14:50:17Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/12592336"
       },
@@ -2625,6 +2734,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEyNTkyMzM1",
         "size": 1968163,
         "state": "uploaded",
+        "updated_at": "2019-05-12T14:50:17Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/12592335"
       }
@@ -2659,6 +2769,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzMDE1NjEw",
         "size": 5317470,
         "state": "uploaded",
+        "updated_at": "2019-06-04T11:26:09Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/13015610"
       },
@@ -2672,6 +2783,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzMDE1NjA5",
         "size": 2045922,
         "state": "uploaded",
+        "updated_at": "2019-06-04T11:26:09Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/13015609"
       }
@@ -2706,6 +2818,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzMzc0Njcy",
         "size": 5319396,
         "state": "uploaded",
+        "updated_at": "2019-06-24T15:24:19Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/13374672"
       },
@@ -2719,6 +2832,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzMzc0Njcx",
         "size": 2045779,
         "state": "uploaded",
+        "updated_at": "2019-06-24T15:24:19Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/13374671"
       }
@@ -2753,6 +2867,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzNzc0NTgx",
         "size": 5322902,
         "state": "uploaded",
+        "updated_at": "2019-07-18T10:37:48Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/13774581"
       },
@@ -2766,6 +2881,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDEzNzc0NTgw",
         "size": 2082841,
         "state": "uploaded",
+        "updated_at": "2019-07-18T10:37:48Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/13774580"
       }
@@ -2800,6 +2916,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE1NDM1ODAy",
         "size": 5325018,
         "state": "uploaded",
+        "updated_at": "2019-10-11T22:27:48Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/15435802"
       },
@@ -2813,6 +2930,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE1NDM1ODAx",
         "size": 2083270,
         "state": "uploaded",
+        "updated_at": "2019-10-11T22:27:48Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/15435801"
       }
@@ -2847,6 +2965,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE1OTY3NTIy",
         "size": 5333024,
         "state": "uploaded",
+        "updated_at": "2019-11-05T13:05:39Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/15967522"
       },
@@ -2860,6 +2979,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE1OTY3NTIx",
         "size": 2071618,
         "state": "uploaded",
+        "updated_at": "2019-11-05T13:05:39Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/15967521"
       }
@@ -2894,6 +3014,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE1OTcwNDEz",
         "size": 5333393,
         "state": "uploaded",
+        "updated_at": "2019-11-05T15:36:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/15970413"
       },
@@ -2907,6 +3028,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE1OTcwNDEx",
         "size": 2071647,
         "state": "uploaded",
+        "updated_at": "2019-11-05T15:36:53Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/15970411"
       }
@@ -2941,6 +3063,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3MTg4MDcw",
         "size": 5666120,
         "state": "uploaded",
+        "updated_at": "2020-01-07T15:09:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/17188070"
       },
@@ -2954,6 +3077,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3MTg4MDY5",
         "size": 2119178,
         "state": "uploaded",
+        "updated_at": "2020-01-07T15:09:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/17188069"
       }
@@ -2988,6 +3112,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3NTk1ODky",
         "size": 5671900,
         "state": "uploaded",
+        "updated_at": "2020-01-27T09:17:59Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/17595892"
       },
@@ -3001,6 +3126,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3NTk1ODkx",
         "size": 2119203,
         "state": "uploaded",
+        "updated_at": "2020-01-27T09:17:59Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/17595891"
       }
@@ -3035,6 +3161,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3OTIwMDcw",
         "size": 5672280,
         "state": "uploaded",
+        "updated_at": "2020-02-10T11:53:45Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/17920070"
       },
@@ -3048,6 +3175,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE3OTIwMDY4",
         "size": 2116982,
         "state": "uploaded",
+        "updated_at": "2020-02-10T11:53:45Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/17920068"
       }
@@ -3082,6 +3210,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4MzA0Mzc5",
         "size": 5673905,
         "state": "uploaded",
+        "updated_at": "2020-02-26T12:02:12Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/18304379"
       },
@@ -3095,6 +3224,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDE4MzA0MzY1",
         "size": 2120969,
         "state": "uploaded",
+        "updated_at": "2020-02-26T12:02:12Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/18304365"
       }
@@ -3129,6 +3259,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDIwMTQxNjM2",
         "size": 5680239,
         "state": "uploaded",
+        "updated_at": "2020-04-25T08:37:28Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/20141636"
       },
@@ -3142,6 +3273,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDIwMTQxNjMz",
         "size": 2121949,
         "state": "uploaded",
+        "updated_at": "2020-04-25T08:37:28Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/20141633"
       }
@@ -3176,6 +3308,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDIyNTQzNzc5",
         "size": 5699657,
         "state": "uploaded",
+        "updated_at": "2020-07-04T11:21:58Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/22543779"
       },
@@ -3189,6 +3322,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDIyNTQzNzc4",
         "size": 2090487,
         "state": "uploaded",
+        "updated_at": "2020-07-04T11:21:58Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/22543778"
       }
@@ -3223,6 +3357,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI1NTcyOTYz",
         "size": 5932291,
         "state": "uploaded",
+        "updated_at": "2020-09-14T07:25:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/25572963"
       },
@@ -3236,6 +3371,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI1NTcyOTU4",
         "size": 2189037,
         "state": "uploaded",
+        "updated_at": "2020-09-14T07:25:40Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/25572958"
       }
@@ -3270,6 +3406,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI2NjExODY5",
         "size": 5937894,
         "state": "uploaded",
+        "updated_at": "2020-10-06T14:29:36Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/26611869"
       },
@@ -3283,6 +3420,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI2NjExODY0",
         "size": 2188959,
         "state": "uploaded",
+        "updated_at": "2020-10-06T14:29:36Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/26611864"
       }
@@ -3317,6 +3455,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3MDYzNDg1",
         "size": 5939687,
         "state": "uploaded",
+        "updated_at": "2020-10-16T08:08:41Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/27063485"
       },
@@ -3330,6 +3469,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3MDYzNDc3",
         "size": 2192686,
         "state": "uploaded",
+        "updated_at": "2020-10-16T08:08:41Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/27063477"
       }
@@ -3364,6 +3504,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3ODg4MDA3",
         "size": 5940618,
         "state": "uploaded",
+        "updated_at": "2020-11-03T14:31:42Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/27888007"
       },
@@ -3377,6 +3518,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDI3ODg4MDAx",
         "size": 2193483,
         "state": "uploaded",
+        "updated_at": "2020-11-03T14:31:42Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/27888001"
       }
@@ -3411,6 +3553,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMwMjUzNDMw",
         "size": 5944996,
         "state": "uploaded",
+        "updated_at": "2021-01-04T15:57:27Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/30253430"
       },
@@ -3424,6 +3567,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMwMjUzNDI4",
         "size": 1922252,
         "state": "uploaded",
+        "updated_at": "2021-01-04T15:57:27Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/30253428"
       }
@@ -3458,6 +3602,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMzNTMyMzc3",
         "size": 5946631,
         "state": "uploaded",
+        "updated_at": "2021-03-16T12:49:25Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/33532377"
       },
@@ -3471,6 +3616,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDMzNTMyMzcw",
         "size": 5392081,
         "state": "uploaded",
+        "updated_at": "2021-03-16T12:49:25Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/33532370"
       }
@@ -3505,6 +3651,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM0NDA1MzM4",
         "size": 6078411,
         "state": "uploaded",
+        "updated_at": "2021-04-03T14:36:46Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/34405338"
       },
@@ -3518,6 +3665,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM0NDA1MzM1",
         "size": 5475886,
         "state": "uploaded",
+        "updated_at": "2021-04-03T14:36:46Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/34405335"
       }
@@ -3552,6 +3700,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM1NzUyMDg3",
         "size": 6093195,
         "state": "uploaded",
+        "updated_at": "2021-04-24T16:27:21Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/35752087"
       },
@@ -3565,6 +3714,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM1NzUyMDcz",
         "size": 5506689,
         "state": "uploaded",
+        "updated_at": "2021-04-24T16:27:21Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/35752073"
       }
@@ -3599,6 +3749,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM3MTY4OTA3",
         "size": 6047577,
         "state": "uploaded",
+        "updated_at": "2021-05-19T10:22:50Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/37168907"
       },
@@ -3612,6 +3763,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM3MTY4OTA1",
         "size": 5497619,
         "state": "uploaded",
+        "updated_at": "2021-05-19T10:22:50Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/37168905"
       }
@@ -3646,6 +3798,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM3NzE0MDUy",
         "size": 6049663,
         "state": "uploaded",
+        "updated_at": "2021-05-28T15:51:54Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/37714052"
       },
@@ -3659,6 +3812,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM3NzE0MDM0",
         "size": 5502033,
         "state": "uploaded",
+        "updated_at": "2021-05-28T15:51:54Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/37714034"
       }
@@ -3693,6 +3847,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM5NTY1MjAy",
         "size": 6054165,
         "state": "uploaded",
+        "updated_at": "2021-07-01T16:36:09Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/39565202"
       },
@@ -3706,6 +3861,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDM5NTY1MTg4",
         "size": 5507557,
         "state": "uploaded",
+        "updated_at": "2021-07-01T16:36:09Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/39565188"
       }
@@ -3740,6 +3896,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ0MDc5MTMy",
         "size": 6057822,
         "state": "uploaded",
+        "updated_at": "2021-09-05T08:30:28Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/44079132"
       },
@@ -3753,6 +3910,7 @@
         "node_id": "MDEyOlJlbGVhc2VBc3NldDQ0MDc5MTI4",
         "size": 1964529,
         "state": "uploaded",
+        "updated_at": "2021-09-05T08:30:28Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/44079128"
       }
@@ -3787,6 +3945,7 @@
         "node_id": "RA_kwDOABLXGs4C4j7O",
         "size": 6223789,
         "state": "uploaded",
+        "updated_at": "2021-11-01T21:26:16Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/48381646"
       },
@@ -3800,6 +3959,7 @@
         "node_id": "RA_kwDOABLXGs4C4j7C",
         "size": 2020048,
         "state": "uploaded",
+        "updated_at": "2021-11-01T21:26:16Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/48381634"
       }
@@ -3834,6 +3994,7 @@
         "node_id": "RA_kwDOABLXGs4C9QRx",
         "size": 6226682,
         "state": "uploaded",
+        "updated_at": "2021-11-16T20:48:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/49611889"
       },
@@ -3847,6 +4008,7 @@
         "node_id": "RA_kwDOABLXGs4C9QRv",
         "size": 2016743,
         "state": "uploaded",
+        "updated_at": "2021-11-16T20:48:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/49611887"
       }
@@ -3881,6 +4043,7 @@
         "node_id": "RA_kwDOABLXGs4DCVe-",
         "size": 6230020,
         "state": "uploaded",
+        "updated_at": "2021-12-03T18:25:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/50943934"
       },
@@ -3894,6 +4057,7 @@
         "node_id": "RA_kwDOABLXGs4DCVe8",
         "size": 2023670,
         "state": "uploaded",
+        "updated_at": "2021-12-03T18:25:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/50943932"
       }
@@ -3928,6 +4092,7 @@
         "node_id": "RA_kwDOABLXGs4DFipo",
         "size": 6233766,
         "state": "uploaded",
+        "updated_at": "2021-12-14T22:40:47Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/51784296"
       },
@@ -3941,6 +4106,7 @@
         "node_id": "RA_kwDOABLXGs4DFipl",
         "size": 2028691,
         "state": "uploaded",
+        "updated_at": "2021-12-14T22:40:47Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/51784293"
       }
@@ -3975,6 +4141,7 @@
         "node_id": "RA_kwDOABLXGs4DNems",
         "size": 6232992,
         "state": "uploaded",
+        "updated_at": "2022-01-13T09:58:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/53864876"
       },
@@ -3988,6 +4155,7 @@
         "node_id": "RA_kwDOABLXGs4DNemg",
         "size": 2015472,
         "state": "uploaded",
+        "updated_at": "2022-01-13T09:58:51Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/53864864"
       }
@@ -4022,6 +4190,7 @@
         "node_id": "RA_kwDOABLXGs4DWvQM",
         "size": 6235077,
         "state": "uploaded",
+        "updated_at": "2022-02-09T15:37:12Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/56292364"
       },
@@ -4035,6 +4204,7 @@
         "node_id": "RA_kwDOABLXGs4DWvP_",
         "size": 2025164,
         "state": "uploaded",
+        "updated_at": "2022-02-09T15:37:12Z",
         "uploader": "josevalim",
         "url": "https://api.github.com/repos/elixir-lang/elixir/releases/assets/56292351"
       }
