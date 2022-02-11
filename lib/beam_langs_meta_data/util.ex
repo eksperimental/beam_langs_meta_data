@@ -122,6 +122,12 @@ defmodule BeamLangsMetaData.Util do
     |> to_string()
   end
 
+  defp put_if_not_nil(map, _key, nil),
+    do: map
+
+  defp put_if_not_nil(map, key, value),
+    do: Map.put(map, key, value)
+
   defp build_assets(assets) do
     for json_asset <- assets do
       %{
@@ -136,6 +142,8 @@ defmodule BeamLangsMetaData.Util do
         state: json_asset.state,
         url: json_asset.url
       }
+      |> put_if_not_nil(:updated_at, json_asset[:updated_at])
+      |> put_if_not_nil(:uploader, json_asset[:uploader])
     end
   end
 
@@ -163,6 +171,7 @@ defmodule BeamLangsMetaData.Util do
           entry = %{
             assets: assets,
             assets_url: json_entry.url,
+            author: json_entry.author,
             body: json_entry.body,
             created_at: json_entry.created_at,
             draft: json_entry.draft,

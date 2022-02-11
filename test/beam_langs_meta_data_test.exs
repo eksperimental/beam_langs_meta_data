@@ -40,32 +40,32 @@ defmodule BeamLangsMetaDataTest do
       ]a
 
     excluded_keys = ~w[
-        reactions
         download_count
-        updated_at
-        author
-        uploader
         followers_url
+        html_url
+        reactions
       ]a
 
     {:ok,
      %{
        elixir_releases: elixir_releases,
        otp_releases: otp_releases,
-       required_keys: required_keys,
-       required_asset_keys: required_asset_keys,
+       elixir_required_keys: required_keys ++ [:author],
+       otp_required_keys: required_keys,
+       elixir_required_asset_keys: required_asset_keys ++ [:uploader, :updated_at],
+       otp_required_asset_keys: required_asset_keys,
        excluded_keys: excluded_keys
      }}
   end
 
   describe "elixir_releases/0" do
     test "does not include filtered keys", %{
-      elixir_releases: elixir_releases,
+      elixir_releases: releases,
       excluded_keys: excluded_keys
     } do
-      assert Keyword.keyword?(elixir_releases) == true
+      assert Keyword.keyword?(releases) == true
 
-      for {major_minor, %{latest: latest_otp_version, releases: releases_kw}} <- elixir_releases,
+      for {major_minor, %{latest: latest_otp_version, releases: releases_kw}} <- releases,
           {version_atom, release_map} <- releases_kw do
         releases_keys = Map.keys(release_map)
         refute excluded_keys in releases_keys
@@ -77,11 +77,11 @@ defmodule BeamLangsMetaDataTest do
     end
 
     test "converted values", %{
-      elixir_releases: elixir_releases,
-      required_keys: required_keys,
-      required_asset_keys: required_asset_keys
+      elixir_releases: releases,
+      elixir_required_keys: required_keys,
+      elixir_required_asset_keys: required_asset_keys
     } do
-      for {_major_minor, %{latest: _latest, releases: releases_kw}} <- elixir_releases,
+      for {_major_minor, %{latest: _latest, releases: releases_kw}} <- releases,
           {_version_atom, release_map} <- releases_kw do
         if id = get_in(release_map, [:id]) do
           assert is_integer(id) == true
@@ -140,12 +140,12 @@ defmodule BeamLangsMetaDataTest do
 
   describe "otp_releases/0" do
     test "does not include filtered keys", %{
-      otp_releases: otp_releases,
+      otp_releases: releases,
       excluded_keys: excluded_keys
     } do
-      assert Keyword.keyword?(otp_releases) == true
+      assert Keyword.keyword?(releases) == true
 
-      for {major, %{latest: latest_otp_version, releases: releases_kw}} <- otp_releases,
+      for {major, %{latest: latest_otp_version, releases: releases_kw}} <- releases,
           {version_atom, release_map} <- releases_kw do
         releases_keys = Map.keys(release_map)
         refute excluded_keys in releases_keys
@@ -157,9 +157,9 @@ defmodule BeamLangsMetaDataTest do
     end
 
     test "converted values", %{
-      otp_releases: otp_releases,
-      required_keys: required_keys,
-      required_asset_keys: required_asset_keys
+      otp_releases: releases,
+      otp_required_keys: required_keys,
+      otp_required_asset_keys: required_asset_keys
     } do
       required_simple_keys = [:created_at, :name, :tag_name, :tarball_url]
 
@@ -172,7 +172,7 @@ defmodule BeamLangsMetaDataTest do
         :win64
       ]
 
-      for {_major_minor, %{latest: _latest, releases: releases_kw}} <- otp_releases,
+      for {_major_minor, %{latest: _latest, releases: releases_kw}} <- releases,
           {_version_atom, release_map} <- releases_kw do
         if id = get_in(release_map, [:id]) do
           assert is_integer(id) == true
