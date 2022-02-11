@@ -8,7 +8,7 @@ defmodule BeamLangsMetaData.Json do
   For the same data represented in Elixir data stuctures check the `BeamLangsMetaData` module.
 
   The information in this module is regularly updated, and stored with every new release of this library.
-  This library does not download information neither at compile time nor at real time.
+  This library does not download information neither at compile time nor at run time.
   """
   import BeamLangsMetaData.Util
 

@@ -5,7 +5,7 @@ defmodule BeamLangsMetaData do
   Currently Elixir and Erlang/OTP are supported.
 
   The information in this module is regularly updated, and stored with every new release of this library.
-  This library does not download information neither at compile time nor at real time.
+  This library does not download information neither at compile time nor at run time.
   """
   import BeamLangsMetaData.Util
 
@@ -164,7 +164,7 @@ defmodule BeamLangsMetaData do
   The data is a stripped down version of the Elixir releases JSON files from GitHub,
   decoded into a list of maps.
 
-  NOTE: The information that gets updated in real time is removed such as number of downloads and reactions.
+  NOTE: The information that gets updated in run time is removed such as number of downloads and reactions.
   Currently `"updated_at"` is also removed, but it will be included when a mechanism to check for
   udpated in any part of the JSON files is implemented. As of now, only the new entries are added to this
   functions, so if there is any correction in a previously entered entry it will not be updated.

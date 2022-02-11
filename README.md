@@ -1,13 +1,29 @@
 # BeamLangsMetaData
 
-Provides meta-data for Elixir and Erlang/OTP.
+## Introduction
+
+`BeamLangsMetaData` provides meta-data for BEAM languages.
+
+Currently Elixir and Erlang/OTP are supported. More languages will be added if there's interest.
+
+`BeamLangsMetaData` - is a small library which contains JSON files including:
+  - every Elixir release and prerelease starting from v1.0.0
+  - and Erlang/OTP releases and prereleases starting from Erlang/OTP 17.0
+  - the [compatibility table between the two languages](https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp)
 
 The information in this module is regularly updated, and stored with every new release of this library.
-This library does not download information neither at compile time nor at real time.
+
+This library does not download information neither at compile time nor at run time.
+
+`BeamLangsMetaData.Json` provides functions to return the JSON files stored in this project. 
 
 This library is aimed at Elixir developers who need to access up-to-date information.
 If you are a developer and need more refined information, please have a look at its sister library
 [ElixirMeta](https://github.com/eksperimental/elixir_meta).
+
+## Important Notice
+
+Due to the nature of the project and since we have not reached `v1.0` yet, only the latest `v0.MINOR` versions will be update with the latest meta-data. Older packages will be [retired](`Mix.Tasks.Hex.Retire`) and you will get a warning when using them indicating that you need to update your library.
 
 ## Repository and Packages
 
@@ -24,7 +40,7 @@ The package can be installed by adding `beam_langs_meta_data` to your list of de
 ```elixir
 def deps do
   [
-    {:beam_langs_meta_data, "~> 0.1.0"},
+    {:beam_langs_meta_data, "~> 0.2.1"},
   ]
 end
 ```
@@ -56,15 +72,10 @@ Run tests by executing:
 `mix test`
 
 
-## Future Plans
+## Road Map
 
-Soon, this information will automatically be updated and released as a new package version as soon as a new
-Elixir version is released.
-
-I am planning to include the information for all Erlang/OTP releases.
-
-Currently once a new entry is added, it is not checked whether this entry has been udpated. I am planning to check for this as well.
-
+1. Automatic package publishing on every OTP and Elixir new release.
+2. Detect update if the release data gets updated.
 
 ## Contact
 

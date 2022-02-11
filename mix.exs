@@ -11,13 +11,13 @@ defmodule BeamLangsMetaData.MixProject do
   Currently Elixir and Erlang/OTP are supported.
 
   The information in this module is regularly updated, and stored with every new release of this library.
-  This library does not download information neither at compile time nor at real time.
+  This library does not download information neither at compile time nor at run time.
   """
 
   def project do
     [
       app: @app,
-      version: "0.2.0",
+      version: "0.2.1",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       description: @description,

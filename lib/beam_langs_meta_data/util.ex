@@ -1,7 +1,7 @@
 defmodule BeamLangsMetaData.Util do
   @moduledoc false
 
-  import BeamLangsMetaData.Helper
+  import BeamLangsMetaData.Helper, only: [to_version!: 1]
 
   @otp_version_requirement ">= 17.0.0"
 
@@ -154,13 +154,6 @@ defmodule BeamLangsMetaData.Util do
 
     for {major_minor, entries} <- pre_filtered do
       latest_name = get_latest_version(entries)
-
-      entries
-      |> Keyword.keys()
-      |> Enum.map(&to_string/1)
-      |> Enum.map(&Version.parse!/1)
-      |> Enum.max(Version)
-      |> to_string()
 
       entries =
         entries
