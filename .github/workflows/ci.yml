@@ -9,8 +9,8 @@ on:
 jobs:
   mix_test:
     runs-on: ubuntu-18.04
-    env:
-      MIX_ENV: test
+    # env:
+    #   MIX_ENV: test
     strategy:
       fail-fast: false
       matrix:
@@ -41,16 +41,22 @@ jobs:
 
       - run: mix deps.compile
 
-      - run: mix compile --warnings-as-errors
+      - name: Compile project
+        run: |
+          MIX_ENV=test mix compile --warnings-as-errors
+          MIX_ENV=dev mix compile --warnings-as-errors
+          MIX_ENV=prod mix compile --warnings-as-error
+        if: ${{ matrix.lint }}
+
+      - name: Run Credo
+        run: mix credo --ignore Credo.Check.Design.TagTODO
         if: ${{ matrix.lint }}
 
       - name: Generate docs
         run: |
           mix docs
           test -f doc/index.html && echo "doc/index.html exists."
-          test -f doc/ExDoc.epub && echo "doc/ExDoc.epub exists."
-
-      - run: mix credo --ignore Credo.Check.Design.TagTODO
-        if: ${{ matrix.lint }}
+          test -f doc/BeamLangsMetaData.epub && echo "doc/BeamLangsMetaData.epub exists."
 
       - run: mix test
+
